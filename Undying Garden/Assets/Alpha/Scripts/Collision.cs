@@ -10,7 +10,7 @@ public class Collision : MonoBehaviour
         if (other.tag == "Alpha")
         {
             //Debug.Log("Arrived!");
-            PlayerNavMesh.arrived = true;
+            AlphaNavMesh.arrived = true;
         }
     }
 }
