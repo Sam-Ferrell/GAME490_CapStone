@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class AlphaCombat : MonoBehaviour
 {
-    public float attackDamage = 10f;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask playerLayer;
+    public float attackDamage = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,23 @@ public class AlphaCombat : MonoBehaviour
 
     public void attack()
     {
+        Collider[] hitObjects = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayer);
 
+        foreach (Collider objects in hitObjects)
+        {
+            if (objects.tag == "Player")
+            {
+                objects.GetComponent<PlayerHealth>().takeDamage(attackDamage);
+                Debug.Log("Get shit on!");
+            }
+        }
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        if (attackPoint != null)
+        {
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
     }
 }

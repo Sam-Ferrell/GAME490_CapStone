@@ -95,8 +95,8 @@ public class AlphaNavMesh : MonoBehaviour
             }          
         }
 
-        // Make the agent do something when the space bar is pressed.
         /*
+        // Make the agent do something when the space bar is pressed.
         if (Input.GetKeyDown(KeyCode.Space))
         {
             flee();

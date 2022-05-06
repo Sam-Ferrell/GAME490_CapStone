@@ -78,10 +78,11 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
-        [Header("Player Attack")]
+        [Header("Player Spear Attack")]
         public Transform attackPoint;
         public float attackRange = 0.5f;
         public LayerMask enemyLayer;
+        public float attackDamage = 25f;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -374,7 +375,10 @@ namespace StarterAssets
 
                     foreach (Collider enemy in hitEnemies)
                     {
-                        Debug.Log("We hit " + enemy.name);
+                        if (enemy.tag == "Alpha")
+                        {
+                            enemy.GetComponent<AlphaHealth>().takeDamage(attackDamage);
+                        }
                     }
                 }
 
