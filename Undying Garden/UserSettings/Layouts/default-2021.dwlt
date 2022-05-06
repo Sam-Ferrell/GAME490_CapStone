@@ -43,8 +43,13 @@ MonoBehaviour:
     y: 0
     width: 448
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -100,7 +105,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 73
+=======
+  controlID: 440
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,7 +186,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 72
+=======
+  controlID: 439
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +240,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 
+  m_LastLoadedLayoutName: Tyler's Layout
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,7 +266,11 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 28
+=======
+  controlID: 247
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +316,11 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 29
+=======
+  controlID: 417
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -345,8 +366,13 @@ MonoBehaviour:
     y: 472
     width: 949
     height: 475
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -475,22 +501,30 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scenes
+=======
+    - Assets/StarterAssets/ThirdPersonController/Character/Animations
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: C:\Users\ferre\Documents\000School\GMU\GAME 490\GAME 490 Shared
     folder\GitHub\Undying Garden
+=======
+  m_LastProjectPath: C:\Users\tyree\OneDrive\Desktop\GAME490_CapStone\Undying Garden
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5a590000
     m_LastClickedID: 22874
-    m_ExpandedIDs: 
+    m_ExpandedIDs: ffffffffd6ad00000aae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -515,24 +549,31 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 46}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff04ae000034ae000038ae0000
+=======
+    scrollPos: {x: 0, y: 708}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff000000000c990000d6ad0000fcad00000aae00003aaf000060af000062af000012b3000014b300002ab3000068b3000046cb0000
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: StarterAssets.inputsettings
+      m_OriginalName: StarterAssets.inputsettings
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 22
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 3}
     m_SearchString: 
@@ -605,9 +646,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 24af0000
       m_LastClickedID: 0
       m_ExpandedIDs: 02abffff34afffff
+=======
+      m_SelectedIDs: 9c8a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: e680ffff64abffff76adffff22fbffff6eb00000
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -976,9 +1023,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -273.20288, y: 305.3866, z: 31.526611}
     speed: 2
     m_Value: {x: -273.20288, y: 305.3866, z: 31.526611}
+=======
+    m_Target: {x: -16.263517, y: 11.477711, z: 87.51461}
+    speed: 2
+    m_Value: {x: -16.263517, y: 11.477711, z: 87.51461}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1025,6 +1078,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: -0.20848227, y: 0.08846897, z: -0.018944897, w: -0.97384685}
     speed: 2
     m_Value: {x: -0.20847933, y: 0.088467725, z: -0.01894463, w: -0.97383314}
@@ -1032,6 +1086,15 @@ MonoBehaviour:
     m_Target: 451.26797
     speed: 2
     m_Value: 451.26797
+=======
+    m_Target: {x: -0.38718227, y: -0.18019325, z: 0.07743133, w: -0.90091556}
+    speed: 2
+    m_Value: {x: -0.38717762, y: -0.18019107, z: 0.0774304, w: -0.9009047}
+  m_Size:
+    m_Target: 0.26924065
+    speed: 2
+    m_Value: 0.26924065
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1049,8 +1112,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.11911609, y: -0.0023861707, z: 0.00028175735, w: -0.9928919}
-  m_LastSceneViewOrtho: 0
+  m_LastSceneViewRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
