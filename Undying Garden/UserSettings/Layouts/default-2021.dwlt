@@ -16,10 +16,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 43
-    width: 2560
-    height: 1357
+    width: 1920
+    height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -39,12 +39,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1962
+    x: 1472
     y: 0
-    width: 598
-    height: 1307
+    width: 448
+    height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -65,10 +70,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 334
+    x: 251
     y: 0
-    width: 363
-    height: 658
+    width: 272
+    height: 477
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 16}
@@ -95,12 +100,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 697
-    height: 658
+    width: 523
+    height: 477
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 52
+<<<<<<< HEAD
+  controlID: 73
+=======
+  controlID: 440
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -118,8 +127,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 334
-    height: 658
+    width: 251
+    height: 477
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
@@ -143,9 +152,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 658
-    width: 697
-    height: 649
+    y: 477
+    width: 523
+    height: 470
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
@@ -170,14 +179,18 @@ MonoBehaviour:
   - {fileID: 6}
   m_Position:
     serializedVersion: 2
-    x: 1265
+    x: 949
     y: 0
-    width: 697
-    height: 1307
+    width: 523
+    height: 947
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 51
+<<<<<<< HEAD
+  controlID: 72
+=======
+  controlID: 439
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,8 +211,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2560
-    height: 1357
+    width: 1920
+    height: 997
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -223,11 +236,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2560
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 
+  m_LastLoadedLayoutName: Tyler's Layout
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,12 +261,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 2560
-    height: 1307
+    width: 1920
+    height: 947
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 20
+<<<<<<< HEAD
+  controlID: 28
+=======
+  controlID: 247
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,8 +287,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 1337
-    width: 2560
+    y: 977
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -294,12 +311,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1265
-    height: 1307
+    width: 949
+    height: 947
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 21
+<<<<<<< HEAD
+  controlID: 29
+=======
+  controlID: 417
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,8 +338,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1265
-    height: 651
+    width: 949
+    height: 472
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
@@ -342,11 +363,16 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 651
-    width: 1265
-    height: 656
+    y: 472
+    width: 949
+    height: 475
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -454,10 +480,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1599
+    x: 1200
     y: 73
-    width: 361
-    height: 637
+    width: 270
+    height: 456
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -475,21 +501,30 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Unity UI Samples/Scenes
+<<<<<<< HEAD
+    - Assets/Scenes
+=======
+    - Assets/StarterAssets/ThirdPersonController/Character/Animations
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Danny\Documents\GitHub\GAME490_CapStone\Undying Garden
+<<<<<<< HEAD
+  m_LastProjectPath: C:\Users\ferre\Documents\000School\GMU\GAME 490\GAME 490 Shared
+    folder\GitHub\Undying Garden
+=======
+  m_LastProjectPath: C:\Users\tyree\OneDrive\Desktop\GAME490_CapStone\Undying Garden
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5a590000
     m_LastClickedID: 22874
-    m_ExpandedIDs: 
+    m_ExpandedIDs: ffffffffd6ad00000aae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -514,24 +549,31 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 65}
+<<<<<<< HEAD
+    scrollPos: {x: 0, y: 46}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000004ae000034ae00003aae000082af0000
+    m_ExpandedIDs: ffffffff04ae000034ae000038ae0000
+=======
+    scrollPos: {x: 0, y: 708}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff000000000c990000d6ad0000fcad00000aae00003aaf000060af000062af000012b3000014b300002ab3000068b3000046cb0000
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: StarterAssets.inputsettings
+      m_OriginalName: StarterAssets.inputsettings
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 22
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 3}
     m_SearchString: 
@@ -593,10 +635,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1265
+    x: 949
     y: 73
-    width: 332
-    height: 637
+    width: 249
+    height: 456
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -604,9 +646,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ceaf0000
+<<<<<<< HEAD
+      m_SelectedIDs: 24af0000
       m_LastClickedID: 0
-      m_ExpandedIDs: a22effff8a46ffff4c60ffff5063ffff5668ffff5868ffff4c79ffff5079ffff7685ffff9e88fffff888ffff6489ffffd089ffffee8cffff928dffff1c8fffff8c8fffff7e98ffffcaa5ffffbeacffff32afffff1cb0000082b000006ab600001ab70000e8bc00000abd000026bd000082bd00009abd0000e2c70000fcc7000018c800006cc800007ec8000074d0000034d1000032d7000062d7000098d70000a4d80000f0d80000ded90000a4da0000
+      m_ExpandedIDs: 02abffff34afffff
+=======
+      m_SelectedIDs: 9c8a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: e680ffff64abffff76adffff22fbffff6eb00000
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -650,10 +698,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1265
-    y: 731
-    width: 695
-    height: 628
+    x: 949
+    y: 550
+    width: 521
+    height: 449
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -679,9 +727,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 724
-    width: 1264
-    height: 635
+    y: 545
+    width: 948
+    height: 454
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -692,7 +740,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1264, y: 614}
+  m_TargetSize: {x: 948, y: 433}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -707,10 +755,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -632
-    m_HBaseRangeMax: 632
-    m_VBaseRangeMin: -307
-    m_VBaseRangeMax: 307
+    m_HBaseRangeMin: -474
+    m_HBaseRangeMax: 474
+    m_VBaseRangeMin: -216.5
+    m_VBaseRangeMax: 216.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -728,23 +776,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1264
-      height: 614
+      width: 948
+      height: 433
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 632, y: 307}
+    m_Translation: {x: 474, y: 216.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -632
-      y: -307
-      width: 1264
-      height: 614
+      x: -474
+      y: -216.5
+      width: 948
+      height: 433
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1264, y: 635}
+  m_LastWindowPixelSize: {x: 948, y: 454}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -772,8 +820,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 1264
-    height: 630
+    width: 948
+    height: 451
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -975,9 +1023,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 571.9164, y: 322.9943, z: 141.00015}
+<<<<<<< HEAD
+    m_Target: {x: -273.20288, y: 305.3866, z: 31.526611}
     speed: 2
-    m_Value: {x: 571.9164, y: 322.9943, z: 141.00015}
+    m_Value: {x: -273.20288, y: 305.3866, z: 31.526611}
+=======
+    m_Target: {x: -16.263517, y: 11.477711, z: 87.51461}
+    speed: 2
+    m_Value: {x: -16.263517, y: 11.477711, z: 87.51461}
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1024,13 +1078,23 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.11911609, y: -0.0023861707, z: 0.00028175735, w: -0.9928919}
+<<<<<<< HEAD
+    m_Target: {x: -0.20848227, y: 0.08846897, z: -0.018944897, w: -0.97384685}
     speed: 2
-    m_Value: {x: -0.119114384, y: -0.0023861364, z: 0.00028175334, w: -0.9928777}
+    m_Value: {x: -0.20847933, y: 0.088467725, z: -0.01894463, w: -0.97383314}
   m_Size:
-    m_Target: 461.44315
+    m_Target: 451.26797
     speed: 2
-    m_Value: 461.44315
+    m_Value: 451.26797
+=======
+    m_Target: {x: -0.38718227, y: -0.18019325, z: 0.07743133, w: -0.90091556}
+    speed: 2
+    m_Value: {x: -0.38717762, y: -0.18019107, z: 0.0774304, w: -0.9009047}
+  m_Size:
+    m_Target: 0.26924065
+    speed: 2
+    m_Value: 0.26924065
+>>>>>>> parent of 1a07afe (Death/Victory Screens)
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1048,8 +1112,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.11911609, y: -0.0023861707, z: 0.00028175735, w: -0.9928919}
-  m_LastSceneViewOrtho: 0
+  m_LastSceneViewRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
@@ -1075,10 +1139,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1962
+    x: 1472
     y: 73
-    width: 597
-    height: 1286
+    width: 447
+    height: 926
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
