@@ -21,6 +21,8 @@ public class AlphaNavMesh : MonoBehaviour
     private Vector3 playerDistance;
     public float fleeRange = 30f;
 
+    private bool hasFled = false;
+
     private void Awake()
     {
         // Get the NavMeshAgent.
@@ -55,6 +57,12 @@ public class AlphaNavMesh : MonoBehaviour
 
     private void Update()
     {
+        if (AlphaHealth.health <= 50 && hasFled == false)
+        {
+            flee();
+            hasFled = true;
+        }
+
         // If the Alpha is in the Navigate state then navigate the world.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate"))
         {

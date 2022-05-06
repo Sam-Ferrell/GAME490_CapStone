@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlphaHealth : MonoBehaviour
 {
-    public float health = 1000f;
+    public static float health = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class AlphaHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("Yay you beat the Alpha!");
+            SceneManager.LoadScene("VictoryScreen");
         }
     }
 }

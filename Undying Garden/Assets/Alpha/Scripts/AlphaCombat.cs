@@ -9,6 +9,8 @@ public class AlphaCombat : MonoBehaviour
     public LayerMask playerLayer;
     public float attackDamage = 25f;
 
+    private float attackTimeout = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class AlphaCombat : MonoBehaviour
             if (objects.tag == "Player")
             {
                 objects.GetComponent<PlayerHealth>().takeDamage(attackDamage);
-                Debug.Log("Get shit on!");
+                Debug.Log("Alpha hit " + objects.name);
             }
         }
     }

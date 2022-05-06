@@ -10,6 +10,10 @@ public class AlphaPursue : StateMachineBehaviour
     // The attack range of the Alpha.
     public float attackRange = 3f;
 
+    public float AttackTimeout = 5f;
+
+    private float _attackTimeoutDelta = 0f;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -26,8 +30,17 @@ public class AlphaPursue : StateMachineBehaviour
         // If the player is within the attackRange then attack them.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && playerDistance.sqrMagnitude <= attackRange * attackRange)
         {
-            // Set the Attack trigger for the state machine to traverse into the attack state.
-            animator.SetTrigger("Attack");
+            if (_attackTimeoutDelta <= 0)
+            {
+                // Set the Attack trigger for the state machine to traverse into the attack state.
+                animator.SetTrigger("Attack");
+                _attackTimeoutDelta = AttackTimeout;
+            }
+
+            else
+            {
+                _attackTimeoutDelta -= Time.deltaTime;
+            }
         }
     }
 
