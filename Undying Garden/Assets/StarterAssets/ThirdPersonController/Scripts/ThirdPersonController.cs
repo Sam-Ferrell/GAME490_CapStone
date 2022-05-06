@@ -365,10 +365,11 @@ namespace StarterAssets
         {
             if (_input.attack && _attackTimeoutDelta <= 0.0f)
             {
+                SpearCollision.dealDamage = true;
                 if (_hasAnimator)
                 {
                     _animator.SetBool(_animIDAttack, true);
-
+                    /*
                     Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
 
                     Debug.Log(hitEnemies.Length);
@@ -380,19 +381,23 @@ namespace StarterAssets
                             enemy.GetComponent<AlphaHealth>().takeDamage(attackDamage);
                         }
                     }
+                    */
                 }
 
                 _attackTimeoutDelta = AttackTimeout;
+     
             }
             else
             {
+                SpearCollision.dealDamage = false;
                 if (_hasAnimator)
                 {
-                    _animator.SetBool(_animIDAttack, false);
+                    _animator.SetBool(_animIDAttack, false);   
                 }
 
                 _attackTimeoutDelta -= Time.deltaTime;
                 _input.attack = false;
+                
             }
         }
 

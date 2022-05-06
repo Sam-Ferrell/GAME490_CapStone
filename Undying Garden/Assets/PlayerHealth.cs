@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 100f;
+    public static float health = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            health = 100f;
+            AlphaHealth.health = 100f;
             SceneManager.LoadScene("DeathScreen");
         }
     }

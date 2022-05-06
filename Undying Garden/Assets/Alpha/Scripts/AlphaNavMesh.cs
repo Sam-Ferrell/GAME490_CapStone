@@ -23,6 +23,8 @@ public class AlphaNavMesh : MonoBehaviour
 
     private bool hasFled = false;
 
+    public Transform startingPosition;
+
     private void Awake()
     {
         // Get the NavMeshAgent.
@@ -34,11 +36,14 @@ public class AlphaNavMesh : MonoBehaviour
         // 
         alpha = GetComponent<Transform>();
 
+        alpha.transform.position = startingPosition.position;
+
         // Get the transform of the Player.
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Choose a random index from the movePositionTransforms array.
         i = Random.Range(0, targetTransforms.Length);
+        //Debug.Log(i);
 
         j = 0;
         prev_j = 0;
@@ -56,8 +61,8 @@ public class AlphaNavMesh : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (AlphaHealth.health <= 50 && hasFled == false)
+    { 
+        if ((AlphaHealth.health <= 50) && (hasFled == false))
         {
             flee();
             hasFled = true;
@@ -115,6 +120,8 @@ public class AlphaNavMesh : MonoBehaviour
     // navigate() selects a new target and sets it as the agent's destination. Essentually it helps the agent to navigate.
     public void navigate()
     {
+        fleeTargetTransforms[j].GetComponent<SphereCollider>().enabled = false;
+
         // Once the agent has arrived at the currently selected position turn off its collider and choose a new target.
         targetTransforms[i].GetComponent<SphereCollider>().enabled = false;
 
@@ -128,6 +135,8 @@ public class AlphaNavMesh : MonoBehaviour
 
         // Make sure assign the newly selected index to the previous index for the next time we need to select a new one.
         prev_i = i;
+
+        //Debug.Log(i);
 
         // Turn on the selected position's collider and make the agent move to it.
         targetTransforms[i].GetComponent<SphereCollider>().enabled = true;
@@ -152,6 +161,7 @@ public class AlphaNavMesh : MonoBehaviour
     // flee() makes the agent run away from the player to a random target.
     public void flee()
     {
+        Debug.Log("flee() was called!");
         // Set the state machine to the flee state by setting the trigger Flee.
         animator.ResetTrigger("Pursue");
         animator.SetTrigger("Flee");

@@ -25,6 +25,8 @@ public class AlphaHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            health = 100f;
+            PlayerHealth.health = 100f;
             SceneManager.LoadScene("VictoryScreen");
         }
     }

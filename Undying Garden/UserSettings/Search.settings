@@ -7,7 +7,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.785D90A9" = "grid"
+	"last_search.785D90A9" = "lighting"
 	"OpenInspectorPreview.785D90A9" = "0"
 	"currentGroup.785D90A9" = "all"
 }
