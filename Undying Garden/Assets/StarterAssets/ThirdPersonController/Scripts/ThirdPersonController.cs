@@ -78,6 +78,11 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Header("Player Attack")]
+        public Transform attackPoint;
+        public float attackRange = 0.5f;
+        public LayerMask enemyLayer;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -362,6 +367,15 @@ namespace StarterAssets
                 if (_hasAnimator)
                 {
                     _animator.SetBool(_animIDAttack, true);
+
+                    Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
+
+                    Debug.Log(hitEnemies.Length);
+
+                    foreach (Collider enemy in hitEnemies)
+                    {
+                        Debug.Log("We hit " + enemy.name);
+                    }
                 }
 
                 _attackTimeoutDelta = AttackTimeout;
@@ -397,6 +411,11 @@ namespace StarterAssets
             Gizmos.DrawSphere(
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
+
+            if (attackPoint != null)
+            {
+                Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            }
         }
 
         private void OnFootstep(AnimationEvent animationEvent)

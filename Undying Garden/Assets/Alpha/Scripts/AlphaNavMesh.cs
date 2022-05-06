@@ -39,6 +39,7 @@ public class AlphaNavMesh : MonoBehaviour
         i = Random.Range(0, targetTransforms.Length);
 
         j = 0;
+        prev_j = 0;
 
         /* Save the "previous" i selected so we can make sure the next time we choose a new i it is not the same one we chose
          * previously.

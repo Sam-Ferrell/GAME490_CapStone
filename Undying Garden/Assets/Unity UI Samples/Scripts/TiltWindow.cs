@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TiltWindow : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class TiltWindow : MonoBehaviour
 
 	void Update ()
 	{
-		Vector3 pos = Input.mousePosition;
+		Vector3 pos = Mouse.current.position.ReadValue();
 
 		float halfWidth = Screen.width * 0.5f;
 		float halfHeight = Screen.height * 0.5f;
