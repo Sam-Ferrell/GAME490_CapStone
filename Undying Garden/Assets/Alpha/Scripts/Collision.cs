@@ -9,7 +9,7 @@ public class Collision : MonoBehaviour
         // If the game object colliding with the position is the Alpha set arrived to true.
         if (other.tag == "Alpha")
         {
-            //Debug.Log("Arrived!");
+            Debug.Log("Arrived!");
             AlphaNavMesh.arrived = true;
         }
     }

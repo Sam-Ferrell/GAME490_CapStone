@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Alpha
   - Target
+  - Alpha Health
   layers:
   - Default
   - TransparentFX

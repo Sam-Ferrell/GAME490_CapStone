@@ -21,12 +21,21 @@ public class AlphaNavMesh : MonoBehaviour
     private Vector3 playerDistance;
     public float fleeRange = 30f;
 
-    private bool hasFled = false;
+    private GameObject alphaHealthBar;
+
+    private bool hasFled1 = false;
+    private bool hasFled2 = false;
+
+    private float currHealth1;
+    private float currHealth2;
 
     public Transform startingPosition;
 
+
     private void Awake()
     {
+        alphaHealthBar = GameObject.FindGameObjectWithTag("Alpha Health");
+
         // Get the NavMeshAgent.
         navMeshAgent = GetComponent<NavMeshAgent>();
 
@@ -58,19 +67,19 @@ public class AlphaNavMesh : MonoBehaviour
 
         // Lastly make the agent move to the selected position. 
         navMeshAgent.destination = targetTransforms[i].transform.position;
+
+        // Making health states for fleeing
+        currHealth1 = AlphaHealth.health * 0.66f;
+        currHealth2 = AlphaHealth.health * 0.33f;
     }
 
     private void Update()
     { 
-        if ((AlphaHealth.health <= 50) && (hasFled == false))
-        {
-            flee();
-            hasFled = true;
-        }
 
         // If the Alpha is in the Navigate state then navigate the world.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate"))
         {
+            alphaHealthBar.SetActive(false);
             /* If arrived is true then the agent has collided with the currently selected target so we call navigate().
              *  - Updating the arrived variable is done by the script Collision.cs on each of the position game objects.
              */
@@ -83,6 +92,7 @@ public class AlphaNavMesh : MonoBehaviour
         //  If the Alpha is pursuing the player call pursue()
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
         {
+            alphaHealthBar.SetActive(true);
             pursue();
         }
 
@@ -92,8 +102,8 @@ public class AlphaNavMesh : MonoBehaviour
             // Calculate the distance from the agent to the player.
             playerDistance = alpha.position - player.position;
 
-            // If the Alpha has made it further than the fleeRange away from the player then...
-            if (playerDistance.sqrMagnitude >= fleeRange * fleeRange)
+            // If the Alpha has made it further than the fleeRange away from the player or arrives at a flee point then...
+            if (playerDistance.sqrMagnitude >= fleeRange * fleeRange || arrived == true)
             {
                 // Teleport the agent to the flee target.
                 navMeshAgent.Warp(fleeTargetTransforms[j].transform.position);
@@ -103,8 +113,8 @@ public class AlphaNavMesh : MonoBehaviour
                 animator.SetTrigger("Navigate");
 
                 // Reset the speed and angular speed of the agent.
-                navMeshAgent.speed = navMeshAgent.speed / 2;
-                navMeshAgent.angularSpeed = navMeshAgent.angularSpeed / 2;
+                navMeshAgent.speed = navMeshAgent.speed / 3;
+                navMeshAgent.angularSpeed = navMeshAgent.angularSpeed / 3;
             }          
         }
 
@@ -115,6 +125,7 @@ public class AlphaNavMesh : MonoBehaviour
             flee();
         }
         */
+        
     }
 
     // navigate() selects a new target and sets it as the agent's destination. Essentually it helps the agent to navigate.
@@ -156,6 +167,19 @@ public class AlphaNavMesh : MonoBehaviour
 
         // Make the Alpha target the player.
         navMeshAgent.destination = player.position;
+
+        // Alpha will flee if health ever hits a quarter of it's max health 
+        if ((AlphaHealth.health <= currHealth1) && (hasFled1 == false))
+        {
+            flee();
+            hasFled1 = true;
+        }
+
+        if ((AlphaHealth.health <= currHealth2) && (hasFled2 == false))
+        {
+            flee();
+            hasFled2 = true;
+        }
     }
 
     // flee() makes the agent run away from the player to a random target.
@@ -178,7 +202,7 @@ public class AlphaNavMesh : MonoBehaviour
         navMeshAgent.destination = fleeTargetTransforms[j].transform.position;
 
         // Increase the agent's speed and angular speed so it can get away from the player.
-        navMeshAgent.speed = navMeshAgent.speed * 2;
-        navMeshAgent.angularSpeed = navMeshAgent.angularSpeed * 2;
+        navMeshAgent.speed = navMeshAgent.speed * 3;
+        navMeshAgent.angularSpeed = navMeshAgent.angularSpeed * 3;
     }
 }
