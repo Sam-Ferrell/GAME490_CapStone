@@ -545,7 +545,7 @@ namespace RealtimeCSG
 
 			if (brush.Shape == null || brush.Shape.Surfaces == null || brush.Shape.Surfaces.Length < 4)
 			{
-				Debug.LogError("The brush (" + brush.name + ") is infinitely thin and is invalid", brush);
+				//Debug.LogError("The brush (" + brush.name + ") is infinitely thin and is invalid", brush);
 				brush.ControlMesh.Valid = false;
 			} else
 			{

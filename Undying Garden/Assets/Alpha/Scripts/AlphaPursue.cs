@@ -34,7 +34,7 @@ public class AlphaPursue : StateMachineBehaviour
         {
             if (_attackTimeoutDelta <= 0)
             {
-                animation = Random.Range(0, 2);
+                animation = Random.Range(0, 3);
                 if (animation == 0)
                 {
                     // Set the Attack trigger for the state machine to traverse into the attack state.

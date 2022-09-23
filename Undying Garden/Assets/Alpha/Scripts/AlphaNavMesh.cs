@@ -27,7 +27,7 @@ public class AlphaNavMesh : MonoBehaviour
     private bool hasFled1 = false;
     private bool hasFled2 = false;
 
-    private bool stopMoving = false;
+    private bool stopMoving = true;
 
     private float currHealth1;
     private float currHealth2;
@@ -89,8 +89,9 @@ public class AlphaNavMesh : MonoBehaviour
             if (arrived == true && stopMoving == true)
             {
                 stopMoving = false;
-                animator.ResetTrigger("Navigate");
+                Debug.Log("Idle");
                 animator.SetTrigger("Idle");
+                animator.ResetTrigger("Navigate");
                 Invoke(nameof(GetGoing), 6.0f);
             }
         }
@@ -99,16 +100,18 @@ public class AlphaNavMesh : MonoBehaviour
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
         {
             playerDistance = alpha.position - player.position;
+            //navMeshAgent.stoppingDistance = 5;
+            
             alphaHealthBar.SetActive(true);
 
             if (playerDistance.sqrMagnitude <= pursueRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("Flee"))
             {
-                navMeshAgent.speed = 0;
+                navMeshAgent.speed = 0.1f;
             }
 
             else if (playerDistance.sqrMagnitude >= pursueRange)
             {
-                navMeshAgent.speed = 3;
+                navMeshAgent.speed = 3f;
             }
 
             pursue();
@@ -225,8 +228,9 @@ public class AlphaNavMesh : MonoBehaviour
     public void flee()
     {
         Debug.Log("flee() was called!");
-        
-        navMeshAgent.speed = 3;
+
+        navMeshAgent.speed = 3f;
+        //navMeshAgent.stoppingDistance = 0;
 
         // Set the state machine to the flee state by setting the trigger Flee.
         animator.ResetTrigger("Pursue");
