@@ -20,11 +20,14 @@ public class AlphaNavMesh : MonoBehaviour
     public static bool arrived = false;
     private Vector3 playerDistance;
     public float fleeRange = 30f;
+    public float pursueRange;
 
     private GameObject alphaHealthBar;
 
     private bool hasFled1 = false;
     private bool hasFled2 = false;
+
+    private bool stopMoving = false;
 
     private float currHealth1;
     private float currHealth2;
@@ -83,16 +86,31 @@ public class AlphaNavMesh : MonoBehaviour
             /* If arrived is true then the agent has collided with the currently selected target so we call navigate().
              *  - Updating the arrived variable is done by the script Collision.cs on each of the position game objects.
              */
-            if (arrived == true)
+            if (arrived == true && stopMoving == true)
             {
-                navigate();
+                stopMoving = false;
+                animator.ResetTrigger("Navigate");
+                animator.SetTrigger("Idle");
+                Invoke(nameof(GetGoing), 6.0f);
             }
         }
 
         //  If the Alpha is pursuing the player call pursue()
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
         {
+            playerDistance = alpha.position - player.position;
             alphaHealthBar.SetActive(true);
+
+            if (playerDistance.sqrMagnitude <= pursueRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("Flee"))
+            {
+                navMeshAgent.speed = 0;
+            }
+
+            else if (playerDistance.sqrMagnitude >= pursueRange)
+            {
+                navMeshAgent.speed = 3;
+            }
+
             pursue();
         }
 
@@ -128,9 +146,22 @@ public class AlphaNavMesh : MonoBehaviour
         
     }
 
+    public void GetGoing()
+    {
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
+        {
+            Debug.Log("Works");
+            animator.SetTrigger("Navigate");
+            animator.ResetTrigger("Idle");
+            navigate();
+        }
+    }
+
     // navigate() selects a new target and sets it as the agent's destination. Essentually it helps the agent to navigate.
     public void navigate()
     {
+        stopMoving = true;
+
         fleeTargetTransforms[j].GetComponent<SphereCollider>().enabled = false;
 
         // Once the agent has arrived at the currently selected position turn off its collider and choose a new target.
@@ -147,22 +178,30 @@ public class AlphaNavMesh : MonoBehaviour
         // Make sure assign the newly selected index to the previous index for the next time we need to select a new one.
         prev_i = i;
 
-        //Debug.Log(i);
+        Debug.Log(i);
 
-        // Turn on the selected position's collider and make the agent move to it.
-        targetTransforms[i].GetComponent<SphereCollider>().enabled = true;
+        // make the agent move to new position.
         navMeshAgent.destination = targetTransforms[i].transform.position;
 
         // Set arrived back to false for the agent to arrive at this next target.
         arrived = false;
+
+        // Turn on the selected position's colliders after certain time to prevent agent from getting stuck
+        Invoke(nameof(engageNavCollider), 2.0f);
+    }
+
+    public void engageNavCollider()
+    {
+        targetTransforms[i].GetComponent<SphereCollider>().enabled = true;
     }
 
     // pursue() makes the agent pursue the player.
     public void pursue()
     {
+        stopMoving = true;
         /* Because we were previously in the navigate state we need to disable the collider of the target the Alpha was previously
          * navigating towards.
-         */ 
+         */
         targetTransforms[i].GetComponent<SphereCollider>().enabled = false;
 
         // Make the Alpha target the player.
@@ -186,6 +225,9 @@ public class AlphaNavMesh : MonoBehaviour
     public void flee()
     {
         Debug.Log("flee() was called!");
+        
+        navMeshAgent.speed = 3;
+
         // Set the state machine to the flee state by setting the trigger Flee.
         animator.ResetTrigger("Pursue");
         animator.SetTrigger("Flee");

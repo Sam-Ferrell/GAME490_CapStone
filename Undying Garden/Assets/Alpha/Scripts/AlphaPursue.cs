@@ -7,6 +7,8 @@ public class AlphaPursue : StateMachineBehaviour
     private Transform alpha;
     private Transform player;
 
+    private int animation;
+
     // The attack range of the Alpha.
     public float attackRange = 3f;
 
@@ -32,9 +34,19 @@ public class AlphaPursue : StateMachineBehaviour
         {
             if (_attackTimeoutDelta <= 0)
             {
-                // Set the Attack trigger for the state machine to traverse into the attack state.
-                animator.SetTrigger("Attack");
-                _attackTimeoutDelta = AttackTimeout;
+                animation = Random.Range(0, 2);
+                if (animation == 0)
+                {
+                    // Set the Attack trigger for the state machine to traverse into the attack state.
+                    animator.SetTrigger("Attack1");
+                    _attackTimeoutDelta = AttackTimeout;
+                }
+                else
+                {
+                    // Set the Attack trigger for the state machine to traverse into the attack state.
+                    animator.SetTrigger("Attack2");
+                    _attackTimeoutDelta = AttackTimeout;
+                }
             }
 
             else
@@ -50,7 +62,8 @@ public class AlphaPursue : StateMachineBehaviour
         /* Reset the Attack trigger once we exit the pursue state so we will re-enter the pursue state from the attack state
          * automatically.
          */
-        animator.ResetTrigger("Attack");
+        animator.ResetTrigger("Attack1");
+        animator.ResetTrigger("Attack2");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

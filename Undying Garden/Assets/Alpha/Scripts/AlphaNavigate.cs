@@ -33,6 +33,19 @@ public class AlphaNavigate : StateMachineBehaviour
             // Set the Pursue trigger for the state machine to traverse into the pursue state.
             animator.SetTrigger("Pursue");
         }
+        
+        else if(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && playerDistance.sqrMagnitude <= pursueRange * pursueRange)
+        {
+            /* Because the Alpha was navigating we want to set arrived to false just in case the Alpha entered the pursue state
+             * while standing on a target. That way the next time we enter the navigate state arrived is guarenteed to be false.
+             */
+            AlphaNavMesh.arrived = false;
+
+            // Set the Pursue trigger for the state machine to traverse into the pursue state.
+            animator.SetTrigger("Pursue");
+            animator.ResetTrigger("Idle");
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
