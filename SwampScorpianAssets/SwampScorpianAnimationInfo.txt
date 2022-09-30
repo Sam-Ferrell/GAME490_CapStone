@@ -1,0 +1,11 @@
+All at 30 FPS
+Name Start-end
+IdleLoop 1-60
+StingerAttack 100-190 (Hit Frame 60)
+FeedLoop 200-290
+WalkLoop 300-332
+Flee 
+Death 600-700
+receveDamage 500-515
+AggroStart 400-490
+ClawAttack 800-860 (Hit frame 30)

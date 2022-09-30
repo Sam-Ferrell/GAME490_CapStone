@@ -22,12 +22,20 @@ public class AlphaNavMesh : MonoBehaviour
     public float fleeRange = 30f;
     public float pursueRange;
 
+    Rigidbody Rigidbody;
+
     private GameObject alphaHealthBar;
+
+    private GameObject alphaObjectAnimator;
+    private Animator alphaAnimator;
+
+    private bool alphaHealth;
 
     private bool hasFled1 = false;
     private bool hasFled2 = false;
 
     private bool stopMoving = true;
+    private bool dead = true;
 
     private float currHealth1;
     private float currHealth2;
@@ -47,6 +55,13 @@ public class AlphaNavMesh : MonoBehaviour
 
         // 
         alpha = GetComponent<Transform>();
+
+        Rigidbody = GetComponent<Rigidbody>();
+
+        alphaObjectAnimator = GameObject.Find("SwampScorpian");
+        alphaAnimator = alphaObjectAnimator.GetComponent<Animator>();
+
+        alphaHealth = GetComponent<AlphaHealth>();
 
         alpha.transform.position = startingPosition.position;
 
@@ -80,7 +95,7 @@ public class AlphaNavMesh : MonoBehaviour
     { 
 
         // If the Alpha is in the Navigate state then navigate the world.
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && dead == true)
         {
             alphaHealthBar.SetActive(false);
             /* If arrived is true then the agent has collided with the currently selected target so we call navigate().
@@ -89,16 +104,30 @@ public class AlphaNavMesh : MonoBehaviour
             if (arrived == true && stopMoving == true)
             {
                 stopMoving = false;
-                Debug.Log("Idle");
-                animator.SetTrigger("Idle");
+                Debug.Log("Idle has Begun");
                 animator.ResetTrigger("Navigate");
+                animator.SetTrigger("Idle");
+                alphaAnimator.ResetTrigger("Navigate");
+                alphaAnimator.SetTrigger("Idle");
+
                 Invoke(nameof(GetGoing), 6.0f);
             }
         }
 
-        //  If the Alpha is pursuing the player call pursue()
-        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Aggro") && dead == true)
         {
+            //Debug.Log("Aggro");
+            animator.ResetTrigger("Navigate");
+            alphaAnimator.ResetTrigger("Navigate");
+            navMeshAgent.speed = 0.1f;
+        }
+
+        //  If the Alpha is pursuing the player call pursue()
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && dead == true)
+        {
+            animator.ResetTrigger("Aggro");
+            alphaAnimator.ResetTrigger("Aggro");
+
             playerDistance = alpha.position - player.position;
             //navMeshAgent.stoppingDistance = 5;
             
@@ -118,7 +147,7 @@ public class AlphaNavMesh : MonoBehaviour
         }
 
         // If the Alpha is fleeing from the player...
-        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Flee")) 
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Flee") && dead == true) 
         {
             // Calculate the distance from the agent to the player.
             playerDistance = alpha.position - player.position;
@@ -132,6 +161,8 @@ public class AlphaNavMesh : MonoBehaviour
                 // Set the state machine to the navigate state.
                 animator.ResetTrigger("Flee");
                 animator.SetTrigger("Navigate");
+                alphaAnimator.ResetTrigger("Flee");
+                alphaAnimator.SetTrigger("Navigate");
 
                 // Reset the speed and angular speed of the agent.
                 navMeshAgent.speed = navMeshAgent.speed / 3;
@@ -146,6 +177,21 @@ public class AlphaNavMesh : MonoBehaviour
             flee();
         }
         */
+
+        if (AlphaHealth.health <= 0 && dead == true)
+        {
+            dead = false;
+
+            navMeshAgent.speed = 0;
+            navMeshAgent.angularSpeed = 0;
+
+            Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+
+            animator.ResetTrigger("Pursue");
+            alphaAnimator.ResetTrigger("Pursue");
+            animator.SetTrigger("Death");
+            alphaAnimator.SetTrigger("Death");
+        }
         
     }
 
@@ -156,6 +202,8 @@ public class AlphaNavMesh : MonoBehaviour
             Debug.Log("Works");
             animator.SetTrigger("Navigate");
             animator.ResetTrigger("Idle");
+            alphaAnimator.SetTrigger("Navigate");
+            alphaAnimator.ResetTrigger("Idle");
             navigate();
         }
     }
@@ -163,6 +211,8 @@ public class AlphaNavMesh : MonoBehaviour
     // navigate() selects a new target and sets it as the agent's destination. Essentually it helps the agent to navigate.
     public void navigate()
     {
+        animator.SetTrigger("Navigate");
+
         stopMoving = true;
 
         fleeTargetTransforms[j].GetComponent<SphereCollider>().enabled = false;
@@ -235,6 +285,8 @@ public class AlphaNavMesh : MonoBehaviour
         // Set the state machine to the flee state by setting the trigger Flee.
         animator.ResetTrigger("Pursue");
         animator.SetTrigger("Flee");
+        alphaAnimator.ResetTrigger("Pursue");
+        alphaAnimator.SetTrigger("Flee");
 
         // Randomly select a new target like usual. 
         while (j == prev_j)

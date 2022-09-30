@@ -23,7 +23,7 @@ public class AlphaNavigate : StateMachineBehaviour
         // Distance between the Alpha and the player.
         var playerDistance = alpha.position - player.position;
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && playerDistance.sqrMagnitude <= pursueRange * pursueRange)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && playerDistance.sqrMagnitude <= pursueRange * pursueRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("Flee"))
         {
             /* Because the Alpha was navigating we want to set arrived to false just in case the Alpha entered the pursue state
              * while standing on a target. That way the next time we enter the navigate state arrived is guarenteed to be false.
@@ -31,10 +31,10 @@ public class AlphaNavigate : StateMachineBehaviour
             AlphaNavMesh.arrived = false;
 
             // Set the Pursue trigger for the state machine to traverse into the pursue state.
-            animator.SetTrigger("Pursue");
+            animator.SetTrigger("Aggro");
         }
         
-        else if(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && playerDistance.sqrMagnitude <= pursueRange * pursueRange)
+        else if(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && playerDistance.sqrMagnitude <= pursueRange * pursueRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("Flee"))
         {
             /* Because the Alpha was navigating we want to set arrived to false just in case the Alpha entered the pursue state
              * while standing on a target. That way the next time we enter the navigate state arrived is guarenteed to be false.
@@ -42,7 +42,7 @@ public class AlphaNavigate : StateMachineBehaviour
             AlphaNavMesh.arrived = false;
 
             // Set the Pursue trigger for the state machine to traverse into the pursue state.
-            animator.SetTrigger("Pursue");
+            animator.SetTrigger("Aggro");
             animator.ResetTrigger("Idle");
         }
 

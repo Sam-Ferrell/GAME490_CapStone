@@ -1,0 +1,15 @@
+Requires 2 materials
+1
+SwampScorpianTextureFull -> Albedo
+Rock020_4K_Roughness -> metal
+Smoothness (0)
+Rock020_4K_NormalDX -> Normal Map (0.5)
+	Reqires you to tell usity it is a normal map
+2
+SwampscorpianLegs -> Albedo
+Rock020_4K_Roughness -> metal
+Smoothness (0)
+Rock020_4K_NormalDX -> Normal Map (0.5)
+	Reqires you to tell usity it is a normal map
+Cyes texture just drag in
+Stiger and claws com with the fbx

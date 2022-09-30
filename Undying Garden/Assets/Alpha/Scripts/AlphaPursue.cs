@@ -9,6 +9,10 @@ public class AlphaPursue : StateMachineBehaviour
 
     private int animation;
 
+    public AlphaCombat checkAttack;
+
+    private bool stopAttacking = false;
+
     // The attack range of the Alpha.
     public float attackRange = 3f;
 
@@ -22,6 +26,7 @@ public class AlphaPursue : StateMachineBehaviour
         // Once we enter the pursue state get the transforms of the Alpha and the Player.
         alpha = animator.GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        checkAttack = GameObject.Find("SwampScorpian").GetComponent<AlphaCombat>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -32,20 +37,28 @@ public class AlphaPursue : StateMachineBehaviour
         // If the player is within the attackRange then attack them.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && playerDistance.sqrMagnitude <= attackRange * attackRange)
         {
-            if (_attackTimeoutDelta <= 0)
+            if (_attackTimeoutDelta <= 0 && stopAttacking == false)
             {
+                stopAttacking = true;
+
                 animation = Random.Range(0, 3);
                 if (animation == 0)
                 {
                     // Set the Attack trigger for the state machine to traverse into the attack state.
                     animator.SetTrigger("Attack1");
                     _attackTimeoutDelta = AttackTimeout;
+                    checkAttack.attack1();
+                    stopAttacking = false;
+                    //Debug.Log("stinger attack");
                 }
                 else
                 {
                     // Set the Attack trigger for the state machine to traverse into the attack state.
                     animator.SetTrigger("Attack2");
                     _attackTimeoutDelta = AttackTimeout;
+                    checkAttack.attack2();
+                    stopAttacking = false;
+                    //Debug.Log("claw attack");
                 }
             }
 
