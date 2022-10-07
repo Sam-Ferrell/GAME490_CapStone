@@ -35,7 +35,7 @@ public class AlphaPursue : StateMachineBehaviour
         var playerDistance = alpha.position - player.position;
 
         // If the player is within the attackRange then attack them.
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && playerDistance.sqrMagnitude <= attackRange * attackRange)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && !animator.GetCurrentAnimatorStateInfo(0).IsName("Damaged") && playerDistance.sqrMagnitude <= attackRange * attackRange)
         {
             if (_attackTimeoutDelta <= 0 && stopAttacking == false)
             {

@@ -169,8 +169,8 @@ public class AlphaNavMesh : MonoBehaviour
                 alphaAnimator.SetTrigger("Navigate");
 
                 // Reset the speed and angular speed of the agent.
-                navMeshAgent.speed = navMeshAgent.speed / 3;
-                navMeshAgent.angularSpeed = navMeshAgent.angularSpeed / 3;
+                navMeshAgent.speed = navMeshAgent.speed / 4;
+                navMeshAgent.angularSpeed = navMeshAgent.angularSpeed / 4;
             }          
         }
 
@@ -202,13 +202,18 @@ public class AlphaNavMesh : MonoBehaviour
     public void IdleFeedRando()
     {
         feedOrIdle = Random.Range(0, 2);
-        feedOrIdleLength = Random.Range(3f, 6f);
-        if(feedOrIdle == 0)
+        feedOrIdleLength = Random.Range(3f, 10f);
+
+        Debug.Log("" + feedOrIdle);
+
+        if (feedOrIdle == 0)
         {
+            Debug.Log("Idle Longer for " + feedOrIdleLength);
             Invoke(nameof(GetGoing), feedOrIdleLength);
         }
         else
         {
+            Debug.Log("Feeding for " + feedOrIdleLength);
             animator.SetTrigger("Feeding");
             animator.ResetTrigger("Idle");
             alphaAnimator.SetTrigger("Feeding");
@@ -276,6 +281,9 @@ public class AlphaNavMesh : MonoBehaviour
     public void pursue()
     {
         stopMoving = true;
+
+        navMeshAgent.speed = navMeshAgent.speed * 2;
+
         /* Because we were previously in the navigate state we need to disable the collider of the target the Alpha was previously
          * navigating towards.
          */
@@ -324,7 +332,7 @@ public class AlphaNavMesh : MonoBehaviour
         navMeshAgent.destination = fleeTargetTransforms[j].transform.position;
 
         // Increase the agent's speed and angular speed so it can get away from the player.
-        navMeshAgent.speed = navMeshAgent.speed * 3;
-        navMeshAgent.angularSpeed = navMeshAgent.angularSpeed * 3;
+        navMeshAgent.speed = navMeshAgent.speed * 2;
+        navMeshAgent.angularSpeed = navMeshAgent.angularSpeed * 2;
     }
 }

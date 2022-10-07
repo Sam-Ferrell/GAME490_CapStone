@@ -10,7 +10,7 @@ public class AlphaHealth : MonoBehaviour
     private Animator animator;
     private Animator alphaAnimator;
 
-    public static float health = 100f;
+    public static float health = 500f;
     public float currentAlphaHealth = 100f;
 
     public HealthBar alphaHealthBar;
@@ -35,8 +35,8 @@ public class AlphaHealth : MonoBehaviour
         // Make the agent do something when the space bar is pressed.
         if (Input.GetKeyDown(KeyCode.K))
         {
-            currentAlphaHealth -= 100;
-            health = health - 100;
+            currentAlphaHealth -= currentAlphaHealth;
+            health -= health;
         }
 
         if (health <= 0)
@@ -47,18 +47,21 @@ public class AlphaHealth : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        animator.SetTrigger("Damaged");
-        alphaAnimator.SetTrigger("Damaged");
-
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        {
+            animator.SetTrigger("Damaged");
+            alphaAnimator.SetTrigger("Damaged");
+        }
 
         health -= damage;
         currentAlphaHealth -= damage;
 
-        Invoke(nameof(resetPersue), 0.1f);
+        Invoke(nameof(resetPersue), 0.01f);
     }
 
     public void resetPersue()
     {
+
         animator.SetTrigger("Pursue");
         alphaAnimator.SetTrigger("Pursue");
         animator.ResetTrigger("Damaged");
