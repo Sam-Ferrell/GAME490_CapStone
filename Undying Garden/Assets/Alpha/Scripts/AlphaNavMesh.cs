@@ -31,6 +31,9 @@ public class AlphaNavMesh : MonoBehaviour
 
     private bool alphaHealth;
 
+    private int feedOrIdle;
+    private float feedOrIdleLength;
+
     private bool hasFled1 = false;
     private bool hasFled2 = false;
 
@@ -110,7 +113,8 @@ public class AlphaNavMesh : MonoBehaviour
                 alphaAnimator.ResetTrigger("Navigate");
                 alphaAnimator.SetTrigger("Idle");
 
-                Invoke(nameof(GetGoing), 6.0f);
+                Invoke(nameof(IdleFeedRando), 3.0f);
+                //Invoke(nameof(GetGoing), 3.0f);
             }
         }
 
@@ -195,6 +199,24 @@ public class AlphaNavMesh : MonoBehaviour
         
     }
 
+    public void IdleFeedRando()
+    {
+        feedOrIdle = Random.Range(0, 2);
+        feedOrIdleLength = Random.Range(3f, 6f);
+        if(feedOrIdle == 0)
+        {
+            Invoke(nameof(GetGoing), feedOrIdleLength);
+        }
+        else
+        {
+            animator.SetTrigger("Feeding");
+            animator.ResetTrigger("Idle");
+            alphaAnimator.SetTrigger("Feeding");
+            alphaAnimator.ResetTrigger("Idle");
+            Invoke(nameof(GetGoing), feedOrIdleLength);
+        }
+    }
+
     public void GetGoing()
     {
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
@@ -202,8 +224,10 @@ public class AlphaNavMesh : MonoBehaviour
             Debug.Log("Works");
             animator.SetTrigger("Navigate");
             animator.ResetTrigger("Idle");
+            animator.ResetTrigger("Feeding");
             alphaAnimator.SetTrigger("Navigate");
             alphaAnimator.ResetTrigger("Idle");
+            alphaAnimator.ResetTrigger("Feeding");
             navigate();
         }
     }

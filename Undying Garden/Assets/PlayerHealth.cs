@@ -18,17 +18,20 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-        void Update()
-        {
+    void Update()
+    {
+        healthBar.SetHealth(currentHealth);
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentHealth -= 50;
+            health = health - 50;
         }
 
-    public void takeDamage(float damage)
-    {
-        health -= damage;
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
+        if (health > 100)
+        {
+            health = 100;
+        }
 
         if (health <= 0)
         {
@@ -36,5 +39,17 @@ public class PlayerHealth : MonoBehaviour
             AlphaHealth.health = 100;
             SceneManager.LoadScene("DeathScreen");
         }
+    }
+
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+        currentHealth -= damage;
+    }
+
+    public void restoreHealth(float restore)
+    {
+        health += restore;
+        currentHealth += restore;
     }
 }
