@@ -1,0 +1,15 @@
+Character_Spear File
+Walk: 50-80
+Idle: 100-130
+Spear Thrust 1: 150-200
+Thrust 2: 210-260
+Thrust 3: 270-340
+Injured: 500-530
+
+Character_Spear_Stow File
+Stow Spear: 550-615
+
+Character_No_Spear File
+Idle NO  Spear:  0-30
+Gather: 50-170
+Set  Trap: 200-380
