@@ -96,6 +96,16 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        // mycode
+        private bool attackingAgain2 = false;
+        private bool attackingAgain3 = false;
+        private bool mayAttackAgain = false;
+
+        private bool stopAttacking = false;
+
+        private int _animIDAttack2;
+        private int _animIDAttack3;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -187,6 +197,8 @@ namespace StarterAssets
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
             _animIDAttack = Animator.StringToHash("Attack");
+            _animIDAttack2 = Animator.StringToHash("Attack2");
+            _animIDAttack3 = Animator.StringToHash("Attack3");
         }
 
         private void GroundedCheck()
@@ -313,7 +325,7 @@ namespace StarterAssets
                     _verticalVelocity = -2f;
                 }
 
-                // Jump
+                /*// Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
@@ -352,7 +364,7 @@ namespace StarterAssets
                 }
 
                 // if we are not grounded, do not jump
-                _input.jump = false;
+                _input.jump = false;*/
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -363,9 +375,11 @@ namespace StarterAssets
         }
         private void Attack()
         {
-            if (_input.attack && _attackTimeoutDelta <= 0.0f)
+            if (_input.attack && _attackTimeoutDelta <= 0.0f && attackingAgain2 == false && attackingAgain3 == false)
             {
-                SpearCollision.dealDamage = true;
+                mayAttackAgain = true;
+                stopAttacking = false;
+                SpearCollision.dealDamage1 = true;
                 if (_hasAnimator)
                 {
                     _animator.SetBool(_animIDAttack, true);
@@ -387,18 +401,79 @@ namespace StarterAssets
                 _attackTimeoutDelta = AttackTimeout;
      
             }
-            else
+
+            else if (attackingAgain2 == true && _attackTimeoutDelta <= 0.0f && stopAttacking == false)
             {
-                SpearCollision.dealDamage = false;
+                Debug.Log("Attack2");
+                attackingAgain2 = false;
+                mayAttackAgain = true;
+                SpearCollision.dealDamage2 = true;
                 if (_hasAnimator)
                 {
-                    _animator.SetBool(_animIDAttack, false);   
+                    _animator.SetBool(_animIDAttack2, true);
+
+                }
+
+                _attackTimeoutDelta = AttackTimeout;
+
+            }
+
+            else if (attackingAgain3 == true && _attackTimeoutDelta <= 0.0f && stopAttacking == false)
+            {
+                Debug.Log("Attack3");
+                attackingAgain3 = false;
+                mayAttackAgain = true;
+                stopAttacking = true;
+                SpearCollision.dealDamage3 = true;
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack3, true);
+                }
+
+                _attackTimeoutDelta = AttackTimeout;
+
+            }
+
+            else if(_attackTimeoutDelta >= 0.0f)
+            {
+                //Debug.Log("Still Attacking");
+                SpearCollision.dealDamage1 = false;
+                SpearCollision.dealDamage2 = false;
+                SpearCollision.dealDamage3 = false;
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, false);
+                    _animator.SetBool(_animIDAttack2, false);
+                    _animator.SetBool(_animIDAttack3, false);
+                }
+                if (_input.attack && !mayAttackAgain && !attackingAgain2 && !attackingAgain3)
+                {
+                    Debug.Log("Still Attacking");
+                    attackingAgain2 = true;
+                    mayAttackAgain = true;
+                }
+                if (_input.attack && !mayAttackAgain && attackingAgain2 && !attackingAgain3)
+                {
+                    Debug.Log("Still Attacking 2");
+                    attackingAgain3 = true;
+                    mayAttackAgain = true;
+                }
+                if (stopAttacking == true)
+                {
+                    attackingAgain2 = false;
+                    attackingAgain3 = false;
                 }
 
                 _attackTimeoutDelta -= Time.deltaTime;
                 _input.attack = false;
-                
+
+                mayAttackAgain = false;
             }
+        }
+
+        private void AttackingAgain()
+        {
+            mayAttackAgain = true;
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
