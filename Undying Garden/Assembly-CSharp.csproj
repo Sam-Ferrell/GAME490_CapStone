@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{83F33C53-14B1-99AE-19B6-F0B113563DD7}</ProjectGuid>
+    <ProjectGuid>{D12239F1-3BFB-F208-379D-BEF6DCB8E8A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.TerrainTools</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -56,10 +56,70 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.terrain-tools@4.0.3\Runtime\TerrainToolbox\TerrainGroup.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaHealth.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Scripts\PlayerCombat.cs" />
+    <Compile Include="Assets\Scripts\UnlockCursor.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
+    <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Scripts\SupplyUI.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaNavMesh.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\ObjectRotate.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaPursue.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
+    <Compile Include="Assets\PSXEffects\Scripts\PSXEffects.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+    <Compile Include="Assets\Healthbar\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaAggro.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\DemoValueChanger.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
+    <Compile Include="Assets\Alpha\Scripts\HealingPlant.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaHitbox.cs" />
+    <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\CameraOrbit.cs" />
+    <Compile Include="Assets\Alpha\Scripts\Collision.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\CameraFlythrough.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\VertexColors.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Healthbar\Scripts\Player1.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\DemoInfo.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\PropertyModifier.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaNavigate.cs" />
+    <Compile Include="Assets\Scripts\SupplyCount.cs" />
+    <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Alpha\Scripts\AlphaCombat.cs" />
+    <Compile Include="Assets\PSXEffects\Example\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\SpearCollision.cs" />
+    <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Exporter (DELETE AFTER USE).cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.terrain-tools@4.0.3\Runtime\Unity.TerrainTools.asmdef" />
+    <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\PSXEffects\Shaders\Resources\PSXEffects.cginc" />
+    <None Include="Assets\PSXEffects\Documentation.txt" />
+    <None Include="Assets\PSXEffects\Shaders\Resources\PSXLightmapping.cginc" />
+    <None Include="Assets\PSXEffects\Shaders\Resources\PS1Shader.shader" />
+    <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\StarterAssets\Environment\Shaders\Built-in_RP\Triplanar.shader" />
+    <None Include="Assets\StarterAssets\license.txt" />
+    <None Include="Assets\PSXEffects\Shaders\Resources\PS1PostProcessing.shader" />
+    <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\StarterAssets\Environment\Shaders\Built-in_RP\ArmatureShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -304,36 +364,6 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="StarterAssetsPackageChecker">
-      <HintPath>Assets\StarterAssets\Editor\PackageChecker\StarterAssetsPackageChecker.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -712,13 +742,101 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{B32C0421-84ED-948D-0048-840A9392CFB4}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{C08E7697-A9BB-2BBC-57BC-A31136273322}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.csproj">
+      <Project>{83F33C53-14B1-99AE-19B6-F0B113563DD7}</Project>
+      <Name>Unity.TerrainTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{941A07EB-E720-356C-5C2E-E5B7FDF26102}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{C79FD0C5-6969-97A6-EDC6-8594F8E91201}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{DA4311CE-8930-81CF-B22A-8691DB56E435}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
+      <Project>{F077B4B9-72CB-9739-D5A2-2EFA662EEEF6}</Project>
+      <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{DA8B75C7-D2A1-2A55-45DE-9D8D4EC489C9}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
+      <Project>{AA3AB068-E182-5931-4609-BF34FFD9AE96}</Project>
+      <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
+      <Project>{3031E12F-AAF5-FC11-DE2C-B73DBBB020B6}</Project>
+      <Name>Unity.TerrainTools.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{2A19338C-CE3D-A745-7663-682F7D9D34E5}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{05CC8EC3-9941-A68C-31AF-5CC2F5111166}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
+      <Project>{A8A91440-0F14-974A-C456-24F0213C2F94}</Project>
+      <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{07D93CE2-1D82-C108-1702-674E64114E85}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
+      <Project>{796DC539-0920-EACB-5B87-0403E37FE5CB}</Project>
+      <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{75258A6A-CEA9-F17A-715D-311ECF981730}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{E958093D-32D8-A715-A87E-5A9824C08CA5}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{3172393A-81CD-D132-06ED-7027C78E11F1}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.InputSystem.csproj">
+      <Project>{F0B5D4FC-91EF-9D56-1C0D-F0216D35C741}</Project>
+      <Name>Unity.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{DA1F747B-1937-993B-B1D8-E4209EB43A56}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{01E0D13A-36AB-E2FF-0565-87527B20F4A7}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{67D0673A-932F-C55F-1486-55E765B257A4}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{0C69F912-8C99-1C35-4BE1-8BCCF3E87D7A}</Project>
+      <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
+      <Project>{B53A08AB-E25D-8B60-B692-2E1F640884DD}</Project>
+      <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
