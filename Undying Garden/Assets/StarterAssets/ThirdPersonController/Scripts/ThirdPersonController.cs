@@ -106,6 +106,9 @@ namespace StarterAssets
         private int _animIDAttack2;
         private int _animIDAttack3;
 
+        private int _animIDSpearSwap;
+        private int _animIDBowSwap;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -172,6 +175,8 @@ namespace StarterAssets
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
             _attackTimeoutDelta = AttackTimeout;
+
+            _animator.SetBool(_animIDSpearSwap, true);
         }
 
         private void Update()
@@ -182,6 +187,7 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Attack();
+            WeaponSwap();
         }
 
         private void LateUpdate()
@@ -199,6 +205,8 @@ namespace StarterAssets
             _animIDAttack = Animator.StringToHash("Attack");
             _animIDAttack2 = Animator.StringToHash("Attack2");
             _animIDAttack3 = Animator.StringToHash("Attack3");
+            _animIDSpearSwap = Animator.StringToHash("SpearSwap");
+            _animIDBowSwap = Animator.StringToHash("BowSwap");
         }
 
         private void GroundedCheck()
@@ -325,7 +333,7 @@ namespace StarterAssets
                     _verticalVelocity = -2f;
                 }
 
-                /*// Jump
+                // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
@@ -364,7 +372,7 @@ namespace StarterAssets
                 }
 
                 // if we are not grounded, do not jump
-                _input.jump = false;*/
+                _input.jump = false;
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -474,6 +482,25 @@ namespace StarterAssets
         private void AttackingAgain()
         {
             mayAttackAgain = true;
+        }
+
+        private void WeaponSwap()
+        { 
+            if(Input.GetKeyDown(KeyCode.Alpha1) && !SpearCollision.weaponSpear)
+            {
+                Debug.Log("Spear Out");
+                SpearCollision.SpearOut();
+                _animator.SetBool(_animIDSpearSwap, true);
+                _animator.SetBool(_animIDBowSwap, false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2) && !SpearCollision.weaponBow)
+            {
+                Debug.Log("Bow Out");
+                SpearCollision.BowOut();
+                _animator.SetBool(_animIDBowSwap, true);
+                _animator.SetBool(_animIDSpearSwap, false);
+            }
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
