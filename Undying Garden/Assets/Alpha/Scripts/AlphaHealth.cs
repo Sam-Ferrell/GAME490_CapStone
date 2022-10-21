@@ -53,8 +53,11 @@ public class AlphaHealth : MonoBehaviour
             alphaAnimator.SetTrigger("Damaged");
         }
 
-        health -= damage;
-        currentAlphaHealth -= damage;
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Flee"))
+        {
+            health -= damage;
+            currentAlphaHealth -= damage;
+        }
 
         Invoke(nameof(resetPersue), 0.01f);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SupplyCount : MonoBehaviour
 {
-    public static float arrowCount = 30;
+    public static float arrowCount = 5;
     public static float trapCount = 3;
 
     // Start is called before the first frame update

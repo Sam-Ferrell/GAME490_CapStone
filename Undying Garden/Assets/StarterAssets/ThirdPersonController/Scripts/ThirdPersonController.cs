@@ -385,69 +385,121 @@ namespace StarterAssets
         {
             if (_input.attack && _attackTimeoutDelta <= 0.0f && attackingAgain2 == false && attackingAgain3 == false)
             {
-                mayAttackAgain = true;
-                stopAttacking = false;
-                SpearCollision.dealDamage1 = true;
-                if (_hasAnimator)
+                if (SpearCollision.weaponBow && SupplyCount.arrowCount > 0)
                 {
-                    _animator.SetBool(_animIDAttack, true);
-                    /*
-                    Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-                    Debug.Log(hitEnemies.Length);
-
-                    foreach (Collider enemy in hitEnemies)
+                    mayAttackAgain = true;
+                    stopAttacking = false;
+                    SpearCollision.dealDamage1 = true;
+                    
+                    if (_hasAnimator)
                     {
-                        if (enemy.tag == "Alpha")
-                        {
-                            enemy.GetComponent<AlphaHealth>().takeDamage(attackDamage);
-                        }
+                        _animator.SetBool(_animIDAttack, true);
                     }
-                    */
+
+                    SupplyCount.arrowCount = SupplyCount.arrowCount - 1;
+
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
+                }
+                
+                else if(SpearCollision.weaponSpear)
+                {
+                    mayAttackAgain = true;
+                    stopAttacking = false;
+                    SpearCollision.dealDamage1 = true;
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDAttack, true);
+                    }
+
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
                 }
 
-                _attackTimeoutDelta = AttackTimeout;
      
             }
 
             else if (attackingAgain2 == true && _attackTimeoutDelta <= 0.0f && stopAttacking == false)
             {
-                Debug.Log("Attack2");
-                attackingAgain2 = false;
-                mayAttackAgain = true;
-                SpearCollision.dealDamage2 = true;
-                if (_hasAnimator)
+                if (SpearCollision.weaponBow && SupplyCount.arrowCount > 0)
                 {
-                    _animator.SetBool(_animIDAttack2, true);
+                    Debug.Log("Attack2");
+                    attackingAgain2 = false;
+                    mayAttackAgain = true;
+                    SpearCollision.dealDamage2 = true;
+                    
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDAttack2, true);
 
+                    }
+
+                    SupplyCount.arrowCount = SupplyCount.arrowCount - 1;
+                    
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
                 }
 
-                _attackTimeoutDelta = AttackTimeout;
+                else if (SpearCollision.weaponSpear)
+                {
+                    Debug.Log("Attack2");
+                    attackingAgain2 = false;
+                    mayAttackAgain = true;
+                    SpearCollision.dealDamage2 = true;
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDAttack2, true);
+                    }
+
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
+                }
+
 
             }
 
             else if (attackingAgain3 == true && _attackTimeoutDelta <= 0.0f && stopAttacking == false)
             {
-                Debug.Log("Attack3");
-                attackingAgain3 = false;
-                mayAttackAgain = true;
-                stopAttacking = true;
-                SpearCollision.dealDamage3 = true;
-                if (_hasAnimator)
+                if (SpearCollision.weaponBow && SupplyCount.arrowCount > 0)
                 {
-                    _animator.SetBool(_animIDAttack3, true);
+                    Debug.Log("Attack3");
+                    attackingAgain3 = false;
+                    mayAttackAgain = true;
+                    stopAttacking = true;
+                    SpearCollision.dealDamage3 = true;
+
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDAttack3, true);
+                    }
+
+                    SupplyCount.arrowCount = SupplyCount.arrowCount - 1;
+
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
                 }
 
-                _attackTimeoutDelta = AttackTimeout;
+                else if (SpearCollision.weaponSpear)
+                {
+                    Debug.Log("Attack3");
+                    attackingAgain3 = false;
+                    mayAttackAgain = true;
+                    stopAttacking = true;
+                    SpearCollision.dealDamage3 = true;
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDAttack3, true);
+                    }
+
+                    Invoke(nameof(AttackReset), 0.017f);
+                    _attackTimeoutDelta = AttackTimeout;
+                }
+
 
             }
 
             else if(_attackTimeoutDelta >= 0.0f)
             {
-                //Debug.Log("Still Attacking");
-                SpearCollision.dealDamage1 = false;
-                SpearCollision.dealDamage2 = false;
-                SpearCollision.dealDamage3 = false;
                 if (_hasAnimator)
                 {
                     _animator.SetBool(_animIDAttack, false);
@@ -479,9 +531,12 @@ namespace StarterAssets
             }
         }
 
-        private void AttackingAgain()
+        private void AttackReset()
         {
-            mayAttackAgain = true;
+            Debug.Log("Reseting Attack");
+            SpearCollision.dealDamage1 = false;
+            SpearCollision.dealDamage2 = false;
+            SpearCollision.dealDamage3 = false;
         }
 
         private void WeaponSwap()

@@ -52,6 +52,11 @@ public class SpearCollision : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // If the game object colliding with the position is the Alpha set arrived to true.
+        if(other.tag == "Alpha")
+        {
+            //Debug.Log("Current Weapon Overlapping");
+        }
+
         if (other.tag == "Alpha" && dealDamage1 == true && weaponSpear)
         {
             Debug.Log("You attacked the Alpha!");
