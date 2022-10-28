@@ -56,7 +56,7 @@ public class SpearCollision : MonoBehaviour
         {
             //Debug.Log("Current Weapon Overlapping");
         }
-
+        //---------------------------------------------------------------//
         if (other.tag == "Alpha" && dealDamage1 == true && weaponSpear)
         {
             Debug.Log("You attacked the Alpha!");
@@ -72,7 +72,7 @@ public class SpearCollision : MonoBehaviour
             Debug.Log("You attacked the Alpha!");
             other.GetComponent<AlphaHealth>().takeDamage(attackDamage3);
         }
-
+        //---------------------------------------------------------------//
         if (other.tag == "Alpha" && dealDamage1 == true && weaponBow)
         {
             Debug.Log("You attacked the Alpha!");
@@ -88,5 +88,38 @@ public class SpearCollision : MonoBehaviour
             Debug.Log("You attacked the Alpha!");
             other.GetComponent<AlphaHealth>().takeDamage(attackDamage3);
         }
+        //---------------------------------------------------------------//
+        if (other.tag == "Trash" && dealDamage1 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage1);
+        }
+        if (other.tag == "Trash" && dealDamage2 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage2);
+        }
+        if (other.tag == "Trash" && dealDamage3 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage3);
+        }
+        //---------------------------------------------------------------//
+        if (other.tag == "Trash" && dealDamage1 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage1);
+        }
+        if (other.tag == "Trash" && dealDamage2 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage2);
+        }
+        if (other.tag == "Trash" && dealDamage3 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash!");
+            other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage3);
+        }
+        //---------------------------------------------------------------//
     }
 }
