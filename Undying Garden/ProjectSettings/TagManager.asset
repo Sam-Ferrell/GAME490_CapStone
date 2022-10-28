@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Alpha Health
   - Animator
+  - Trash
   layers:
   - Default
   - TransparentFX

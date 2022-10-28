@@ -109,6 +109,9 @@ namespace StarterAssets
         private int _animIDSpearSwap;
         private int _animIDBowSwap;
 
+        private float moveSpeedRemember;
+        private float sprintSpeedRemember;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -158,6 +161,9 @@ namespace StarterAssets
 
         private void Start()
         {
+            moveSpeedRemember = MoveSpeed;
+            sprintSpeedRemember = SprintSpeed;
+
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -602,6 +608,20 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+        public void Trapped()
+        {
+            Debug.Log("Trapped");
+            MoveSpeed = 0f;
+            SprintSpeed = 0f;
+        }
+
+        public void RestoreSpeed()
+        {
+            Debug.Log("No longer trapped!");
+            MoveSpeed = moveSpeedRemember;
+            SprintSpeed = sprintSpeedRemember;
         }
     }
 }
