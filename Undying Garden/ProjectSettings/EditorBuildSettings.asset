@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Unity UI Samples/Scenes/Menu 3D.unity
     guid: fa0913115ac1d4fba8b9d10280f4b04d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Unity UI Samples/Scenes/Tutorial Layout.unity
     guid: 8a065e65c5cee7646adb700fb325f62d
   - enabled: 1
