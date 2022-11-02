@@ -6,10 +6,12 @@ Thrust 2: 210-260
 Thrust 3: 270-340
 Injured: 500-530
 
-Character_Spear_Stow File
-Stow Spear: 550-615
-
 Character_No_Spear File
 Idle NO  Spear:  0-30
 Gather: 50-170
 Set  Trap: 200-380
+Trapped: 400-470
+
+Character_Bow File
+Bow_Draw: 100-190
+Bow_Cont_Shoot: 200-240
