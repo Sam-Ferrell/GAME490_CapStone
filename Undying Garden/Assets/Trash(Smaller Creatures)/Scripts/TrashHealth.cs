@@ -21,7 +21,7 @@ public class TrashHealth : MonoBehaviour
         if(health <= 0)
         {
             player.GetComponent<StarterAssets.ThirdPersonController>().RestoreSpeed();
-            Destroy(trash);
+            //Destroy(trash);
         }
     }
 

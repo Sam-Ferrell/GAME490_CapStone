@@ -20,10 +20,6 @@ public class TrashPursue : StateMachineBehaviour
 
     private float _attackTimeoutDelta = 0f;
 
-    public float returnLength = 30f;
-
-    private bool canReturn = true;
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
