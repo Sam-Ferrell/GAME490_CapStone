@@ -19,6 +19,7 @@ public class TrashNavMesh : MonoBehaviour
     public static bool arrived = false;
     private Vector3 playerDistance;
     public float pursueRange;
+    public float fleeRange = 30f;
 
     Rigidbody Rigidbody;
 
@@ -174,7 +175,16 @@ public class TrashNavMesh : MonoBehaviour
     // navigate() selects a new target and sets it as the agent's destination. Essentually it helps the agent to navigate.
     public void navigate()
     {
-        animator.SetBool("Return", false);
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
+        {
+            animator.SetBool("Return", true);
+            TrashAnimator.SetBool("Return", true);
+        }
+        else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue"))
+        {
+            animator.SetBool("Return", false);
+            TrashAnimator.SetBool("Return", false);
+        }
 
         animator.SetTrigger("Navigate");
         TrashAnimator.SetTrigger("Navigate");
@@ -240,5 +250,26 @@ public class TrashNavMesh : MonoBehaviour
             navigate();
         }*/
 
+        // Calculate the distance from the agent to the player.
+        playerDistance = Trash.position - player.position;
+
+        // If the Alpha has made it further than the fleeRange away from the player or arrives at a flee point then...
+        if (playerDistance.sqrMagnitude >= fleeRange * fleeRange || arrived == true)
+        {
+            Debug.Log("Returning");
+
+            animator.SetBool("Return", true);
+            TrashAnimator.SetBool("Return", true);
+
+            navigate();
+            Invoke(nameof(TrashRetreat), 1f);
+        }
+
+    }
+
+    public void TrashRetreat()
+    {
+        animator.SetBool("Return", false);
+        TrashAnimator.SetBool("Return", false);
     }
 }

@@ -22,16 +22,6 @@ public class TrashNavigate : StateMachineBehaviour
     {
         // Distance between the Trash and the player.
         var playerDistance = Trash.position - player.position;
-        animator.SetBool("Return", false);
-
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") || !animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            animator.SetTrigger("Navigate");
-        }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate"))
-        {
-            animator.ResetTrigger("Navigate");
-        }
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && playerDistance.sqrMagnitude <= pursueRange * pursueRange)
         {

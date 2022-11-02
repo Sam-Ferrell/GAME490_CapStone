@@ -74,11 +74,11 @@ public class TrashPursue : StateMachineBehaviour
 
         }
 
-        else if (playerDistance.sqrMagnitude >= returnLength * returnLength)
+        /*else if (playerDistance.sqrMagnitude >= returnLength * returnLength)
         {
             Debug.Log("Returning");
             animator.SetBool("Return", true);
-        }
+        }*/
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
