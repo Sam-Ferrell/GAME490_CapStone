@@ -1,0 +1,1 @@
+player healthbar is a single unit. scorpion healthbar is divided into thirds; when one is emptied the healthbar locks as it enters flee state
