@@ -132,9 +132,11 @@ public class TrashNavMesh : MonoBehaviour
 
             pursue();
         }
-
+        
         if (TrashHealth.health <= 0 && dead == true)
         {
+            Debug.Log("Trash Dead");
+
             dead = false;
 
             navMeshAgent.speed = 0;

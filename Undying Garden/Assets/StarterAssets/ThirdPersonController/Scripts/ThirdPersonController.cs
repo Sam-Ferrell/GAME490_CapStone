@@ -113,6 +113,7 @@ namespace StarterAssets
         private float sprintSpeedRemember;
 
         public bool trapped = false;
+        public bool harvested = false;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -626,6 +627,7 @@ namespace StarterAssets
         public void RestoreSpeed()
         {
             _animator.SetBool("Harvesting", false);
+            harvested = false;
 
             if (trapped == false)
             {
@@ -642,6 +644,7 @@ namespace StarterAssets
                 _animator.SetBool("Harvesting", true);
                 Trapped();
                 Invoke(nameof(RestoreSpeed), 3f);
+                harvested = true;
             }
         }
     }

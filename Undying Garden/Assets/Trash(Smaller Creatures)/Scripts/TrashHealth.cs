@@ -11,6 +11,7 @@ public class TrashHealth : MonoBehaviour
 
     public Collider harvestCollider;
     public bool harvestable = false;
+    private bool stopHarvesting = false;
 
     private Transform player;
 
@@ -40,6 +41,12 @@ public class TrashHealth : MonoBehaviour
             }
             //Destroy(trash);
         }
+
+        if(player.GetComponent<StarterAssets.ThirdPersonController>().harvested == true && !stopHarvesting)
+        {
+            Invoke(nameof(harvestingWhat), 3f);
+            stopHarvesting = true;
+        }
     }
 
     private void canBeHarvested()
@@ -50,7 +57,22 @@ public class TrashHealth : MonoBehaviour
 
     public void takeDamageTrash(float damage)
     {
-            health -= damage;
+        health -= damage;
+        Debug.Log(health);
+    }
+
+    public void harvestingWhat()
+    {
+        stopHarvesting = false;
+        if (trashID == 1)
+        {
+            SupplyCount.arrowCount += 5;
+        }
+
+        if (trashID == 2)
+        {
+            SupplyCount.trapCount += 1;
+        }
     }
 
     private void OnTriggerStay(Collider other)
