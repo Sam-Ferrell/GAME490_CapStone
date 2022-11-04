@@ -24,6 +24,7 @@ public class TrapperPlant : MonoBehaviour
         if(playerDistance.sqrMagnitude <= pursueRange * pursueRange)
         {
             player.GetComponent<StarterAssets.ThirdPersonController>().Trapped();
+            player.GetComponent<StarterAssets.ThirdPersonController>().TrapperPlant();
         }
     }
 }
