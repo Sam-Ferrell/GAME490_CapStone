@@ -9,6 +9,8 @@ public class TrapperPlant : MonoBehaviour
 
     public float pursueRange = 10f;
 
+    private bool stopThat = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,17 @@ public class TrapperPlant : MonoBehaviour
     {
         var playerDistance = trapperPlant.position - player.position;
 
-        if(playerDistance.sqrMagnitude <= pursueRange * pursueRange)
+        if(playerDistance.sqrMagnitude <= pursueRange * pursueRange && Trash3Health.dead == false)
         {
             player.GetComponent<StarterAssets.ThirdPersonController>().Trapped();
             player.GetComponent<StarterAssets.ThirdPersonController>().TrapperPlant();
+        }
+
+        if(Trash3Health.dead == true && stopThat == false)
+        {
+            player.GetComponent<StarterAssets.ThirdPersonController>().RestoreSpeed();
+            player.GetComponent<StarterAssets.ThirdPersonController>().TrapperPlant();
+            stopThat = true;
         }
     }
 }

@@ -114,6 +114,8 @@ namespace StarterAssets
 
         public bool trapped = false;
         public bool harvested = false;
+        public bool harvested2 = false;
+        public bool harvested3 = false;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -628,13 +630,13 @@ namespace StarterAssets
         {
             _animator.SetBool("Harvesting", false);
             harvested = false;
+            harvested2 = false;
+            harvested3 = false;
 
-            if (trapped == false)
-            {
-                Debug.Log("No longer trapped!");
-                MoveSpeed = moveSpeedRemember;
-                SprintSpeed = sprintSpeedRemember;
-            }
+
+            Debug.Log("No longer trapped!");
+            MoveSpeed = moveSpeedRemember;
+            SprintSpeed = sprintSpeedRemember;
         }
 
         public void Harvesting()
@@ -645,6 +647,28 @@ namespace StarterAssets
                 Trapped();
                 Invoke(nameof(RestoreSpeed), 3f);
                 harvested = true;
+            }
+        }
+
+        public void Harvesting2()
+        {
+            if (Grounded)
+            {
+                _animator.SetBool("Harvesting", true);
+                Trapped();
+                Invoke(nameof(RestoreSpeed), 3f);
+                harvested2 = true;
+            }
+        }
+
+        public void Harvesting3()
+        {
+            if (Grounded)
+            {
+                _animator.SetBool("Harvesting", true);
+                Trapped();
+                Invoke(nameof(RestoreSpeed), 3f);
+                harvested3 = true;
             }
         }
     }

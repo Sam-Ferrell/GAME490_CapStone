@@ -33,7 +33,7 @@ public class TrashNavMesh : MonoBehaviour
     private bool stopMoving = true;
     private bool dead = true;
 
-    public Transform startingPosition;
+    //public Transform startingPosition;
 
     private void Awake()
     {
@@ -54,7 +54,7 @@ public class TrashNavMesh : MonoBehaviour
 
         trashHealth = GetComponent<TrashHealth>();
 
-        Trash.transform.position = startingPosition.position;
+        //Trash.transform.position = startingPosition.position;
 
         // Get the transform of the Player.
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -256,7 +256,7 @@ public class TrashNavMesh : MonoBehaviour
         playerDistance = Trash.position - player.position;
 
         // If the Alpha has made it further than the fleeRange away from the player or arrives at a flee point then...
-        if (playerDistance.sqrMagnitude >= fleeRange * fleeRange || arrived == true)
+        if (playerDistance.sqrMagnitude >= fleeRange * fleeRange)
         {
             Debug.Log("Returning");
 

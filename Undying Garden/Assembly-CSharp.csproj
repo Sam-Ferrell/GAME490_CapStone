@@ -63,12 +63,18 @@
     <Compile Include="Assets\Scripts\UnlockCursor.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Navigate.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Pursue.cs" />
     <Compile Include="Assets\Scripts\SupplyUI.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Combat.cs" />
     <Compile Include="Assets\Alpha\Scripts\AlphaNavMesh.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashNavigate.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Collision.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2NavMesh.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\ObjectRotate.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash3Health.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
@@ -97,10 +103,12 @@
     <Compile Include="Assets\PSXEffects\Example\Scripts\CameraOrbit.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashCombat.cs" />
     <Compile Include="Assets\Alpha\Scripts\Collision.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Health.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\CameraFlythrough.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\VertexColors.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Healthbar\Scripts\Player1.cs" />
+    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Aggro.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\DemoInfo.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\PropertyModifier.cs" />
@@ -114,14 +122,7 @@
     <Compile Include="Assets\Scripts\SpearCollision.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Aggro.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Collision.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Combat.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Health.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Navigate.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2NavMesh.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Pursue.cs" />
-    <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash3Health.cs" />
+    <Compile Include="Assets\TrashSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />

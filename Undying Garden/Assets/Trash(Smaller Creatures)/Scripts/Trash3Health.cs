@@ -7,7 +7,9 @@ public class Trash3Health : MonoBehaviour
     public GameObject Trash3;
     public static float health = 100f;
 
-    public int Trash3ID;
+    public static bool dead = false;
+
+    public int Trash3ID = 2;
 
     public Collider harvestCollider;
     public bool harvestable = false;
@@ -21,12 +23,15 @@ public class Trash3Health : MonoBehaviour
         harvestCollider = GetComponent<SphereCollider>();
         harvestCollider.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        Trash3ID = 2;
+        dead = false;
+        health = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
             if (Trash3ID == 1)
             {
@@ -35,14 +40,13 @@ public class Trash3Health : MonoBehaviour
 
             if (Trash3ID == 2)
             {
-                player.GetComponent<StarterAssets.ThirdPersonController>().TrapperPlant();
-                player.GetComponent<StarterAssets.ThirdPersonController>().RestoreSpeed();
                 Invoke(nameof(canBeHarvested), 3f);
             }
+            dead = !dead;
             //Destroy(Trash3);
         }
 
-        if (player.GetComponent<StarterAssets.ThirdPersonController>().harvested == true && !stopHarvesting)
+        if (player.GetComponent<StarterAssets.ThirdPersonController>().harvested3 == true && !stopHarvesting)
         {
             Invoke(nameof(harvestingWhat), 3f);
             stopHarvesting = true;
@@ -63,7 +67,6 @@ public class Trash3Health : MonoBehaviour
 
     public void harvestingWhat()
     {
-        stopHarvesting = false;
         if (Trash3ID == 1)
         {
             SupplyCount.arrowCount += 5;
@@ -73,6 +76,9 @@ public class Trash3Health : MonoBehaviour
         {
             SupplyCount.trapCount += 1;
         }
+        spawnAgain();
+        stopHarvesting = false;
+        Destroy(Trash3);
     }
 
     private void OnTriggerStay(Collider other)
@@ -84,9 +90,14 @@ public class Trash3Health : MonoBehaviour
                 Debug.Log("Player in range");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    player.GetComponent<StarterAssets.ThirdPersonController>().Harvesting();
+                    player.GetComponent<StarterAssets.ThirdPersonController>().Harvesting3();
                 }
             }
         }
+    }
+
+    private void spawnAgain()
+    {
+        TrashSpawner.trashCanSpawn3 = true;
     }
 }

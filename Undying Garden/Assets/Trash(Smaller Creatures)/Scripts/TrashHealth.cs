@@ -7,7 +7,9 @@ public class TrashHealth : MonoBehaviour
     public GameObject trash;
     public static float health = 100f;
 
-    public int trashID;
+    public static bool dead = false;
+
+    public int trashID = 0;
 
     public Collider harvestCollider;
     public bool harvestable = false;
@@ -21,13 +23,21 @@ public class TrashHealth : MonoBehaviour
         harvestCollider = GetComponent<SphereCollider>();
         harvestCollider.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        trashID = 0;
+        dead = false;
+        health = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        if(health <= 0 && !dead)
         {
+            if(trashID == 0)
+            {
+                Invoke(nameof(goodbye), 4f);
+            }
+
             if(trashID == 1)
             {
                 Invoke(nameof(canBeHarvested), 3f);
@@ -39,6 +49,7 @@ public class TrashHealth : MonoBehaviour
                 player.GetComponent<StarterAssets.ThirdPersonController>().RestoreSpeed();
                 Invoke(nameof(canBeHarvested), 3f);
             }
+            dead = !dead;
             //Destroy(trash);
         }
 
@@ -87,5 +98,11 @@ public class TrashHealth : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void goodbye()
+    {
+        TrashSpawner.trashCanSpawn = true;
+        Destroy(trash);
     }
 }

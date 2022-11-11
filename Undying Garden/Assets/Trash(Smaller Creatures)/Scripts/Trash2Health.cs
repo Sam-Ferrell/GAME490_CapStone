@@ -7,7 +7,9 @@ public class Trash2Health : MonoBehaviour
     public GameObject Trash2;
     public static float health = 100f;
 
-    public int Trash2ID;
+    public static bool dead = false;
+
+    public int Trash2ID = 1;
 
     public Collider harvestCollider;
     public bool harvestable = false;
@@ -21,12 +23,15 @@ public class Trash2Health : MonoBehaviour
         harvestCollider = GetComponent<SphereCollider>();
         harvestCollider.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        Trash2ID = 1;
+        dead = false;
+        health = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
             if (Trash2ID == 1)
             {
@@ -39,10 +44,11 @@ public class Trash2Health : MonoBehaviour
                 player.GetComponent<StarterAssets.ThirdPersonController>().RestoreSpeed();
                 Invoke(nameof(canBeHarvested), 3f);
             }
+            dead = !dead;
             //Destroy(Trash2);
         }
 
-        if (player.GetComponent<StarterAssets.ThirdPersonController>().harvested == true && !stopHarvesting)
+        if (player.GetComponent<StarterAssets.ThirdPersonController>().harvested2 == true && !stopHarvesting)
         {
             Invoke(nameof(harvestingWhat), 3f);
             stopHarvesting = true;
@@ -63,7 +69,7 @@ public class Trash2Health : MonoBehaviour
 
     public void harvestingWhat()
     {
-        stopHarvesting = false;
+
         if (Trash2ID == 1)
         {
             SupplyCount.arrowCount += 5;
@@ -73,6 +79,9 @@ public class Trash2Health : MonoBehaviour
         {
             SupplyCount.trapCount += 1;
         }
+        spawnAgain();
+        stopHarvesting = false;
+        Destroy(Trash2);
     }
 
     private void OnTriggerStay(Collider other)
@@ -83,9 +92,14 @@ public class Trash2Health : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    player.GetComponent<StarterAssets.ThirdPersonController>().Harvesting();
+                    player.GetComponent<StarterAssets.ThirdPersonController>().Harvesting2();
                 }
             }
         }
+    }
+
+    private void spawnAgain()
+    {
+        TrashSpawner.trashCanSpawn2 = true;
     }
 }

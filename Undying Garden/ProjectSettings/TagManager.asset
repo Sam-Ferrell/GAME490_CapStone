@@ -12,6 +12,9 @@ TagManager:
   - Trash
   - Trash2
   - Trash3
+  - Trash Spawn
+  - Trash Spawn2
+  - Trash Spawn3
   layers:
   - Default
   - TransparentFX
