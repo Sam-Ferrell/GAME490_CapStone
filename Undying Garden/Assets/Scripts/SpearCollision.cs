@@ -121,5 +121,69 @@ public class SpearCollision : MonoBehaviour
             other.GetComponent<TrashHealth>().takeDamageTrash(attackDamage3);
         }
         //---------------------------------------------------------------//
+        if (other.tag == "Trash2" && dealDamage1 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage1);
+        }
+        if (other.tag == "Trash2" && dealDamage2 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage2);
+        }
+        if (other.tag == "Trash2" && dealDamage3 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage3);
+        }
+        //---------------------------------------------------------------//
+        if (other.tag == "Trash2" && dealDamage1 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage1);
+        }
+        if (other.tag == "Trash2" && dealDamage2 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage2);
+        }
+        if (other.tag == "Trash2" && dealDamage3 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash2!");
+            other.GetComponent<Trash2Health>().takeDamageTrash2(attackDamage3);
+        }
+        //---------------------------------------------------------------//
+        if (other.tag == "Trash3" && dealDamage1 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage1);
+        }
+        if (other.tag == "Trash3" && dealDamage2 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage2);
+        }
+        if (other.tag == "Trash3" && dealDamage3 == true && weaponSpear)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage3);
+        }
+        //---------------------------------------------------------------//
+        if (other.tag == "Trash3" && dealDamage1 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage1);
+        }
+        if (other.tag == "Trash3" && dealDamage2 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage2);
+        }
+        if (other.tag == "Trash3" && dealDamage3 == true && weaponBow)
+        {
+            Debug.Log("You attacked the Trash3!");
+            other.GetComponent<Trash3Health>().takeDamageTrash3(attackDamage3);
+        }
+        //---------------------------------------------------------------//
     }
 }
