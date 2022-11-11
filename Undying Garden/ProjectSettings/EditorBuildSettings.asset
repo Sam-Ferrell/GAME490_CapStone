@@ -11,14 +11,17 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Unity UI Samples/Scenes/Tutorial Layout.unity
     guid: 8a065e65c5cee7646adb700fb325f62d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ReGeo.unity
     guid: e55c87ce7c49afb45b24ca6e3ca59f25
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VictoryScreen.unity
     guid: 35aa8b94d4895114f830eedb1e6c45ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DeathScreen.unity
     guid: b5dbd096dbaa73a4e82d1c64ef08ecb8
+  - enabled: 1
+    path: Assets/Scenes/ReGeo - Copy.unity
+    guid: 5eefc4f2cc7496d4fb88a12a49b6ff4b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
