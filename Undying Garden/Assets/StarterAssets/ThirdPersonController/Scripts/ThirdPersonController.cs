@@ -112,6 +112,8 @@ namespace StarterAssets
         private float moveSpeedRemember;
         private float sprintSpeedRemember;
 
+        public bool trapSpawn = false;
+
         public bool trapped = false;
         public bool harvested = false;
         public bool harvested2 = false;
@@ -629,6 +631,7 @@ namespace StarterAssets
         public void RestoreSpeed()
         {
             _animator.SetBool("Harvesting", false);
+            _animator.SetBool("Trapping", false);
             harvested = false;
             harvested2 = false;
             harvested3 = false;
@@ -637,6 +640,23 @@ namespace StarterAssets
             Debug.Log("No longer trapped!");
             MoveSpeed = moveSpeedRemember;
             SprintSpeed = sprintSpeedRemember;
+        }
+
+        public void PlaceTrap()
+        {
+            if (Grounded)
+            {
+                _animator.SetBool("Trapping", true);
+                Trapped();
+                Invoke(nameof(RestoreSpeed), 3f);
+                Invoke(nameof(EngageTrap), 3f);
+            }
+        }
+
+        private void EngageTrap()
+        {
+            SupplyCount.trapCount = SupplyCount.trapCount - 1;
+            trapSpawn = true;
         }
 
         public void Harvesting()

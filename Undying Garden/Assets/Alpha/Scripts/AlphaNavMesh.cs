@@ -22,6 +22,8 @@ public class AlphaNavMesh : MonoBehaviour
     public float fleeRange = 30f;
     public float pursueRange;
 
+    public static bool trapStop = false;
+
     Rigidbody Rigidbody;
 
     private GameObject alphaHealthBar;
@@ -96,6 +98,11 @@ public class AlphaNavMesh : MonoBehaviour
 
     private void Update()
     { 
+        if(trapStop == true)
+        {
+            Invoke(nameof(untrapped), 6f);
+            trapStop = false;
+        }
 
         // If the Alpha is in the Navigate state then navigate the world.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && dead == true)
@@ -334,5 +341,18 @@ public class AlphaNavMesh : MonoBehaviour
         // Increase the agent's speed and angular speed so it can get away from the player.
         navMeshAgent.speed = navMeshAgent.speed * 2;
         navMeshAgent.angularSpeed = navMeshAgent.angularSpeed * 2;
+    }
+
+    public static void trapped()
+    {
+        navMeshAgent.speed = 0.0f;
+        navMeshAgent.angularSpeed = 30.0f;
+        trapStop = true;
+    }
+
+    public void untrapped()
+    {
+        navMeshAgent.speed = 3.0f;
+        navMeshAgent.angularSpeed = 120.0f;
     }
 }
