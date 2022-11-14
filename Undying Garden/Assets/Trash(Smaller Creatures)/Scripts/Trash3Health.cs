@@ -17,6 +17,9 @@ public class Trash3Health : MonoBehaviour
 
     private Transform player;
 
+    private Animator animator;
+    public GameObject Crinoid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class Trash3Health : MonoBehaviour
         Trash3ID = 2;
         dead = false;
         health = 100f;
+        animator = Crinoid.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class Trash3Health : MonoBehaviour
     {
         if (health <= 0 && !dead)
         {
+            animator.SetTrigger("Dead");
             if (Trash3ID == 1)
             {
                 Invoke(nameof(canBeHarvested), 3f);
@@ -40,7 +45,7 @@ public class Trash3Health : MonoBehaviour
 
             if (Trash3ID == 2)
             {
-                Invoke(nameof(canBeHarvested), 3f);
+                Invoke(nameof(canBeHarvested), 2f);
             }
             dead = !dead;
             //Destroy(Trash3);

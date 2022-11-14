@@ -103,6 +103,7 @@
     <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\CameraOrbit.cs" />
+    <Compile Include="Assets\Scripts\TrapPlacer.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashCombat.cs" />
     <Compile Include="Assets\Alpha\Scripts\Collision.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\Trash2Health.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashAggro.cs" />
     <Compile Include="Assets\Alpha\Scripts\AlphaCombat.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Trap.cs" />
     <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashNavMesh.cs" />
     <Compile Include="Assets\Scripts\SpearCollision.cs" />
@@ -130,8 +132,6 @@
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashHitbox.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashHitbox3.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\Scripts\TrapPlacer.cs" />
-    <Compile Include="Assets\Trap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Opaque.shader" />

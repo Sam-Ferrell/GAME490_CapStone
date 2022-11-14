@@ -7,15 +7,22 @@ public class TrapperPlant : MonoBehaviour
     private Transform trapperPlant;
     private Transform player;
 
-    public float pursueRange = 10f;
+    public float pursueRange = 3f;
 
     private bool stopThat = false;
+
+    private Animator animator;
+    public GameObject Crinoid;
+
+    private Transform targetPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = Crinoid.GetComponent<Animator>();
         trapperPlant = this.GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -25,6 +32,8 @@ public class TrapperPlant : MonoBehaviour
 
         if(playerDistance.sqrMagnitude <= pursueRange * pursueRange && Trash3Health.dead == false)
         {
+            transform.LookAt(targetPlayer);
+            animator.SetTrigger("Grabbing");
             player.GetComponent<StarterAssets.ThirdPersonController>().Trapped();
             player.GetComponent<StarterAssets.ThirdPersonController>().TrapperPlant();
         }
