@@ -1,0 +1,12 @@
+Idle_No_Spear: 0-30
+Gather: 50-170
+Set_Trap: 200-380
+Trapped_400-470
+Idle_Spear: 500-530
+Injured: 550-580
+Thrust_01: 600-650
+Thrust_02: 660-710
+Thrust_03: 720-790
+Idle_Bow: 800-830
+Bow_Draw: 850-935
+Bow_Cont_Shoot: 940-980
