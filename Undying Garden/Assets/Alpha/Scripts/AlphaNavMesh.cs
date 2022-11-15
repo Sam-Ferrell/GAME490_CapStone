@@ -45,11 +45,25 @@ public class AlphaNavMesh : MonoBehaviour
     private float currHealth1;
     private float currHealth2;
 
-    public Transform startingPosition;
+    //public Transform startingPosition;
 
+    public GameObject alphaLocation;
+    public GameObject[] alphaSpawns;
+
+    private bool stopAudio = false;
+    public AudioSource footsteps;
+
+    private void Start()
+    {
+        alphaSpawns = GameObject.FindGameObjectsWithTag("Alpha Spawns");
+
+        spawnPoint();
+    }
 
     private void Awake()
     {
+        footsteps.Stop();
+
         alphaHealthBar = GameObject.FindGameObjectWithTag("Alpha Health");
 
         // Get the NavMeshAgent.
@@ -68,7 +82,7 @@ public class AlphaNavMesh : MonoBehaviour
 
         alphaHealth = GetComponent<AlphaHealth>();
 
-        alpha.transform.position = startingPosition.position;
+        //alpha.transform.position = startingPosition.position;
 
         // Get the transform of the Player.
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -97,8 +111,8 @@ public class AlphaNavMesh : MonoBehaviour
     }
 
     private void Update()
-    { 
-        if(trapStop == true)
+    {
+        if (trapStop == true)
         {
             Invoke(nameof(untrapped), 6f);
             trapStop = false;
@@ -107,6 +121,12 @@ public class AlphaNavMesh : MonoBehaviour
         // If the Alpha is in the Navigate state then navigate the world.
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Navigate") && dead == true)
         {
+            if(!stopAudio)
+            {
+                footsteps.Play();
+                stopAudio = true;
+            }
+
             alphaHealthBar.SetActive(false);
             /* If arrived is true then the agent has collided with the currently selected target so we call navigate().
              *  - Updating the arrived variable is done by the script Collision.cs on each of the position game objects.
@@ -127,6 +147,12 @@ public class AlphaNavMesh : MonoBehaviour
 
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Aggro") && dead == true)
         {
+            if (stopAudio)
+            {
+                footsteps.Stop();
+                stopAudio = false;
+            }
+
             //Debug.Log("Aggro");
             animator.ResetTrigger("Navigate");
             alphaAnimator.ResetTrigger("Navigate");
@@ -136,6 +162,12 @@ public class AlphaNavMesh : MonoBehaviour
         //  If the Alpha is pursuing the player call pursue()
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pursue") && dead == true)
         {
+            if (!stopAudio)
+            {
+                footsteps.Play();
+                stopAudio = true;
+            }
+
             animator.ResetTrigger("Aggro");
             alphaAnimator.ResetTrigger("Aggro");
 
@@ -160,6 +192,12 @@ public class AlphaNavMesh : MonoBehaviour
         // If the Alpha is fleeing from the player...
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Flee") && dead == true) 
         {
+            if (!stopAudio)
+            {
+                footsteps.Play();
+                stopAudio = true;
+            }
+
             // Calculate the distance from the agent to the player.
             playerDistance = alpha.position - player.position;
 
@@ -208,6 +246,12 @@ public class AlphaNavMesh : MonoBehaviour
 
     public void IdleFeedRando()
     {
+        if (stopAudio)
+        {
+            footsteps.Stop();
+            stopAudio = false;
+        }
+
         feedOrIdle = Random.Range(0, 2);
         feedOrIdleLength = Random.Range(3f, 10f);
 
@@ -354,5 +398,12 @@ public class AlphaNavMesh : MonoBehaviour
     {
         navMeshAgent.speed = 3.0f;
         navMeshAgent.angularSpeed = 120.0f;
+    }
+
+    public void spawnPoint()
+    {
+        GameObject spawnChoice = alphaSpawns[Random.Range(0, alphaSpawns.Length)];
+        Transform spawnPoint = spawnChoice.transform;
+        alpha.position = spawnPoint.position;
     }
 }

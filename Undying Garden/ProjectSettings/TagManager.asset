@@ -15,6 +15,7 @@ TagManager:
   - Trash Spawn
   - Trash Spawn2
   - Trash Spawn3
+  - Alpha Spawns
   layers:
   - Default
   - TransparentFX
