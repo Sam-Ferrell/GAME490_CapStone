@@ -1,0 +1,13 @@
+Welcome to UNDYING GARDEN
+*Hunt or be Hunted*
+
+Story blurb: It was only supposed to be a flyby. Now you and the other survivors of the crash have been here a year or more. This planet is wild, savage, and unwelcoming. You're one of the few still able to fight off the monsters. They say a great scorpion-like beast stalks the swamps, vicious but elusive. It's up to you to find it, kill it, and live another day. 
+
+Tutorial: The scorpion monster roams this swamp. Use sight and sound to track it, then ambush it and fight it till it flees or you kill it.
+
+	- Use the WASD keys to move, and the mouse to aim.
+	- Switch between your spear and bow with (1) and (2). But beware, you have limited arrows!
+	- Set a trap with (?). If the monster wanders into the trap, it will be stuck for several seconds and vulnerable to attack. Traps are also limited!
+	- Harvest dead enemies for arrows or traps with (?).
+	---
+	- Beware other, smaller monsters. Mini-scorpions are aggressive. Dragonflies are territorial but can be harvested for arrows. Crinoids will trap you, but can be attacked and harvested to be reused as traps.
