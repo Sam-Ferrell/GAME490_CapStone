@@ -1,12 +1,15 @@
-Idle_No_Spear: 0-30
-Gather: 50-170
-Set_Trap: 200-380
-Trapped_400-470
-Idle_Spear: 500-530
+Walk: 0-30
+Idle_NO_Spear: 50-80
+Gather: 100-220
+Set_Trap: 250-430
+Trapped: 450-520
 Injured: 550-580
-Thrust_01: 600-650
-Thrust_02: 660-710
-Thrust_03: 720-790
-Idle_Bow: 800-830
-Bow_Draw: 850-935
-Bow_Cont_Shoot: 940-980
+Walk_Spear: 550-580
+Injured: 630-660
+Thrust_01: 680-730
+Thrust_02: 750-790
+Thrust_03: 800-870
+Idle_Bow: 930-960
+Bow_Draw: 980-1065
+Bow_Cont_Shoot: 1070-1110
+Idle_Spear: 1120-1150
