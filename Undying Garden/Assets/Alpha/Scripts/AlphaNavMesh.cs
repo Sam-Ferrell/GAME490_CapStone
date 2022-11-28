@@ -362,7 +362,7 @@ public class AlphaNavMesh : MonoBehaviour
     {
         Debug.Log("flee() was called!");
 
-        navMeshAgent.speed = 3f;
+        navMeshAgent.speed = 5f;
         //navMeshAgent.stoppingDistance = 0;
 
         // Set the state machine to the flee state by setting the trigger Flee.

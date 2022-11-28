@@ -25,7 +25,7 @@ public class Trash2Health : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Trash2ID = 1;
         dead = false;
-        health = 100f;
+        health = 30f;
     }
 
     // Update is called once per frame

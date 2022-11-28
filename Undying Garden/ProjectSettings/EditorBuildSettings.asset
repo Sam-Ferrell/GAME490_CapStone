@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ReGeo.unity
     guid: e55c87ce7c49afb45b24ca6e3ca59f25
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: 35aa8b94d4895114f830eedb1e6c45ec
   - enabled: 0
