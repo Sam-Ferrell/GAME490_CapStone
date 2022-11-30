@@ -91,6 +91,7 @@
     <Compile Include="Assets\Alpha\Scripts\AlphaAggro.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\PSXEffects\Example\Scripts\DemoValueChanger.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Scripts\HealingPlant.cs" />
@@ -132,7 +133,6 @@
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashHitbox.cs" />
     <Compile Include="Assets\Trash(Smaller Creatures)\Scripts\TrashHitbox3.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Opaque.shader" />
