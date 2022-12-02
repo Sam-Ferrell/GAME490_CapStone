@@ -33,11 +33,11 @@ public class AlphaHealth : MonoBehaviour
         alphaHealthBar.SetAlphaHealth(currentAlphaHealth);
 
         // Make the agent do something when the space bar is pressed.
-        if (Input.GetKeyDown(KeyCode.K))
+        /*if (Input.GetKeyDown(KeyCode.K))
         {
             currentAlphaHealth -= currentAlphaHealth;
             health -= health;
-        }
+        }*/
 
         if (health <= 0)
         {

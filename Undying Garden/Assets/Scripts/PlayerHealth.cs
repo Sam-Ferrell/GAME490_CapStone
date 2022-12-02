@@ -22,11 +22,11 @@ public class PlayerHealth : MonoBehaviour
     {
         healthBar.SetHealth(currentHealth);
 
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             currentHealth -= 50;
             health = health - 50;
-        }
+        }*/
 
         if (health > 100)
         {

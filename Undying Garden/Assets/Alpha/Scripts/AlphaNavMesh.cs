@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AlphaNavMesh : MonoBehaviour
 {
@@ -240,6 +241,8 @@ public class AlphaNavMesh : MonoBehaviour
             alphaAnimator.ResetTrigger("Pursue");
             animator.SetTrigger("Death");
             alphaAnimator.SetTrigger("Death");
+
+            Invoke(nameof(win), 10f);
         }
         
     }
@@ -405,5 +408,10 @@ public class AlphaNavMesh : MonoBehaviour
         GameObject spawnChoice = alphaSpawns[Random.Range(0, alphaSpawns.Length)];
         Transform spawnPoint = spawnChoice.transform;
         alpha.position = spawnPoint.position;
+    }
+
+    public void win()
+    {
+        SceneManager.LoadScene("VictoryScreen");
     }
 }

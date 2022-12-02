@@ -122,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -6140205063344461162, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -623,7 +623,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -4063191886377774987, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -784,7 +784,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -6140205063344461162, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -811,7 +811,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -6140205063344461162, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -872,7 +872,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spear_Attack
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3599064203446403133}
@@ -885,7 +885,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: 6432374490731430922, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1005,7 +1005,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: 417696342416492377, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1013,7 +1013,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 354216277352124052, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: 3556820796314353678, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1021,7 +1021,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 130988572402349275, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: 3556820796314353678, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 6
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1564,7 +1564,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: 4b5204c0d7c0354449d073aca78138f1, type: 3}
+  m_Motion: {fileID: 8337508359754226630, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1578,7 +1578,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spear_Attack 2
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9154761087632676398}
@@ -1591,7 +1591,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -4240456434805309875, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1619,7 +1619,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: 4b5204c0d7c0354449d073aca78138f1, type: 3}
+  m_Motion: {fileID: 7398217320853358207, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1731,7 +1731,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spear_Attack 1
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3335464530166442691}
@@ -1744,7 +1744,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7693106732128438541, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+  m_Motion: {fileID: -2762208701334605860, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1932,7 +1932,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: 8337508359754226630, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1940,7 +1940,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 354216277352124052, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: -1228472390956863400, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1948,7 +1948,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 130988572402349275, guid: d13e50021ea8c2b469ddf6c6e515c3d7, type: 3}
+    m_Motion: {fileID: -1228472390956863400, guid: 588e6c5f41cf7244bbf94f35e340dc25, type: 3}
     m_Threshold: 6
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

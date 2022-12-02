@@ -5,6 +5,12 @@ public class SupplyUI : MonoBehaviour
 {
     public Text arrowSupplyText;
     public Text trapSupplyText;
+    private void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
 
     // Update is called once per frame
     void Update()
