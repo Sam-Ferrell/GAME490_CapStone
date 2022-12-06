@@ -9,6 +9,7 @@ Injured: 630-660
 Thrust_01: 680-730
 Thrust_02: 750-790
 Thrust_03: 800-870
+Walk_Bow: 880-910
 Idle_Bow: 930-960
 Bow_Draw: 980-1065
 Bow_Cont_Shoot: 1070-1110
