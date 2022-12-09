@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5286932256056160017}
   m_Layer: 6
-  m_Name: Dragonfly_Prefab
+  m_Name: Dragonfly_Prefab_real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,6 +517,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5286932256056160017}
     m_Modifications:
+    - target: {fileID: 848112210174161273, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 848112210174161273, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 848112210174161273, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
+      propertyPath: m_Center.z
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 848112210174161279, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -613,6 +625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash2
       objectReference: {fileID: 0}
+    - target: {fileID: 8012478554337449608, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6210329fd436ac34999f429df163f2b4, type: 3}
 --- !u!1 &2705816492952736387 stripped
@@ -657,7 +673,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 10
+  attackDamage: 20
 --- !u!4 &6874066633320948096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1601983831719765821, guid: 6210329fd436ac34999f429df163f2b4, type: 3}

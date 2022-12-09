@@ -565,6 +565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7859087156798706887, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
+      propertyPath: attackDamage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7859087157074717872, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
       propertyPath: m_Controller
       value: 
@@ -598,8 +602,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7700898359843647124}
     - target: {fileID: 8137842212999072859, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
+      propertyPath: m_Radius
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137842212999072859, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137842212999072859, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8137842212999072860, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
       propertyPath: m_Controller

@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3636069970975670635}
   m_Layer: 6
-  m_Name: Dragonfly_Prefab
+  m_Name: Dragonfly_Prefab_other
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
