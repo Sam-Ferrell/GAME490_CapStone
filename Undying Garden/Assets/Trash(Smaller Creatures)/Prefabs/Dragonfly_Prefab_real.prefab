@@ -673,7 +673,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 20
+  attackDamage: 50
 --- !u!4 &6874066633320948096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1601983831719765821, guid: 6210329fd436ac34999f429df163f2b4, type: 3}

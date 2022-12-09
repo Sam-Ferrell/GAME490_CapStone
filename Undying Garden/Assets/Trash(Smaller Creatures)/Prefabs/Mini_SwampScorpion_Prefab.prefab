@@ -567,7 +567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7859087156798706887, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
       propertyPath: attackDamage
-      value: 30
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7859087157074717872, guid: d20c0446af3f9e9409c1fe3b2e523341, type: 3}
       propertyPath: m_Controller
